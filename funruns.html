@@ -96,7 +96,7 @@
             padding: 20px;
             border-radius: 10px;
         }
-        form label, form input, form select {
+        form label, form input, form select, form textarea {
             display: block;
             margin: 10px 0;
             font-size: 1.2em;
@@ -147,51 +147,6 @@
             text-align: center;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const scheduleForm = document.getElementById('schedule-form');
-            const scheduleList = document.getElementById('schedule-list');
-
-            // Array to store the existing schedules
-            const schedules = [
-                { team1: 'Team 1', team2: 'Team 2', time: new Date('2024-10-20T15:00:00'), location: 'Downtown Court' },
-                { team1: 'Team 3', team2: 'Team 4', time: new Date('2024-10-21T17:00:00'), location: 'City Park' }
-            ];
-
-            // Function to render the schedule list
-            function renderSchedule() {
-                scheduleList.innerHTML = '';
-                schedules.forEach(schedule => {
-                    const listItem = document.createElement('li');
-                    listItem.classList.add('schedule-slot');
-                    listItem.innerHTML = `<strong>${schedule.team1} vs ${schedule.team2}</strong><br>Location: ${schedule.location}, ${schedule.time.toLocaleString()}`;
-                    scheduleList.appendChild(listItem);
-                });
-            }
-
-            // Render initial schedule
-            renderSchedule();
-
-            scheduleForm.addEventListener('submit', function (event) {
-                event.preventDefault();
-                const team = document.getElementById('team').value;
-                const preferredTime = new Date(document.getElementById('preferred-time').value);
-
-                // Conflict detection logic
-                const conflict = schedules.some(schedule => {
-                    return Math.abs(preferredTime - schedule.time) < 2 * 60 * 60 * 1000; // 2 hours buffer time
-                });
-
-                if (conflict) {
-                    alert('The selected time conflicts with an existing game. Please choose a different time.');
-                } else {
-                    // Add new schedule entry
-                    schedules.push({ team1: team, team2: 'TBD', time: preferredTime, location: 'TBD' });
-                    renderSchedule();
-                }
-            });
-        });
-    </script>
 </head>
 <body>
     <header>
@@ -205,6 +160,7 @@
                 <li><a href="#schedule">Schedule</a></li>
                 <li><a href="#stats">Stats</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#submit-video">Submit Video</a></li>
             </ul>
         </nav>
     </header>
@@ -293,6 +249,22 @@
             <li><strong>Hoop Heroes:</strong> Wins: 4, Losses: 3</li>
             <!-- Add more stats as needed -->
         </ul>
+    </section>
+
+    <section id="submit-video">
+        <h2>Submit Your Game Video</h2>
+        <p>Have a video of a game or a highlight reel that you'd like to share? Use the form below to submit your video link for review. We accept links from platforms like YouTube or Vimeo.</p>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="team">Team or Game:</label>
+            <input type="text" id="team" name="team" required>
+            <label for="video-link">Video Link (YouTube or Vimeo):</label>
+            <input type="url" id="video-link" name="video-link" required>
+            <label for="description">Comments/Description:</label>
+            <textarea id="description" name="description" rows="4"></textarea>
+            <input type="submit" value="Submit Video">
+        </form>
     </section>
 
     <section id="contact">
