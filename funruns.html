@@ -21,24 +21,15 @@
             align-items: center;
         }
         .header-logo {
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            height: 60px;
-            z-index: 2;
-        }
-        h1 {
-            color: white;
-            margin: 0;
-            font-size: 2em;
-            flex: 1;
-            text-align: center;
+            height: 80px; /* Increased logo size */
+            margin-right: 10px;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 0;
+            margin: 0 auto;
             text-align: center;
+            flex: 1;
             background-color: #4B0082;
         }
         nav ul li {
@@ -77,7 +68,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.3); /* Light black overlay */
+            background-color: rgba(0, 0, 0, 0.5); /* Darker black overlay */
             z-index: 1;
         }
         .overlay-content {
@@ -86,15 +77,12 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 2;
-            display: flex;
-            align-items: center;
             text-align: center;
         }
         .overlay-text {
             color: white;
             font-size: 3em;
             font-weight: bold;
-            margin-right: 15px;
             line-height: 1.2;
         }
         @keyframes fade {
@@ -114,8 +102,7 @@
 </head>
 <body>
     <header>
-        <img src="Screen Shot 2024-10-19 at 2.05.09 AM.png" alt="LBL Logo" class="header-logo">
-        <h1>LBL - London Basketball League</h1>
+        <img src="Screen Shot 2024-10-19 at 2.18.23 AM.png" alt="LBL Logo" class="header-logo">
         <nav>
             <ul>
                 <li><a href="funruns.html">Home</a></li>
@@ -134,12 +121,12 @@
 
     <div class="slideshow-container">
         <!-- Slideshow images -->
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010806.png');"></div>
+        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010806.png'); opacity: 1;"></div>
         <div class="slide" style="background-image: url('Screenshot 2024-10-19 010747.png');"></div>
         <div class="slide" style="background-image: url('Screenshot 2024-10-19 010551.png');"></div>
         <div class="slide" style="background-image: url('Screenshot 2024-10-19 010539.png');"></div>
 
-        <!-- Light black overlay -->
+        <!-- Darker black overlay -->
         <div class="black-overlay"></div>
 
         <!-- Overlay text -->
