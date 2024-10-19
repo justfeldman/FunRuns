@@ -58,9 +58,19 @@
             width: 100%;
             height: 100%;
             background-size: cover;
-            background-position: top; /* Show top part of images */
+            background-position: center; /* Default positioning */
             opacity: 0;
             transition: opacity 1s;
+        }
+        /* Specific positioning adjustments */
+        .slide1 {
+            background-position: center; /* Reset to center */
+        }
+        .slide2 {
+            background-position: top 20px; /* Move up slightly */
+        }
+        .slide3, .slide4 {
+            background-position: top; /* Keep as is */
         }
         .black-overlay {
             position: absolute;
@@ -121,10 +131,10 @@
 
     <div class="slideshow-container">
         <!-- Slideshow images -->
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010806.png'); opacity: 1;"></div>
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010747.png');"></div>
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010551.png');"></div>
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010539.png');"></div>
+        <div class="slide slide1" style="background-image: url('Screenshot 2024-10-19 010806.png'); opacity: 1;"></div>
+        <div class="slide slide2" style="background-image: url('Screenshot 2024-10-19 010747.png');"></div>
+        <div class="slide slide3" style="background-image: url('Screenshot 2024-10-19 010551.png');"></div>
+        <div class="slide slide4" style="background-image: url('Screenshot 2024-10-19 010539.png');"></div>
 
         <!-- Darker black overlay -->
         <div class="black-overlay"></div>
