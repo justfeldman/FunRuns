@@ -3,53 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basketball Games</title>
+    <title>Basketball League Manager</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #ffd700;
+            text-shadow: 2px 2px #000;
+        }
+        header .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 100px;
+            width: 100px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #f4f4f4;
+        }
+        .banner {
+            background: url('basketball-banner.jpg') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            position: relative;
+            text-align: center;
+        }
+        .banner h2 {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffd700;
+            font-size: 2.5em;
+            text-shadow: 2px 2px #000;
+        }
+        section {
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 15px;
+            position: relative;
+        }
+        section h2 {
+            color: #ffd700;
+            font-size: 2.5em;
+        }
+        section p, section ul {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffd700;
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        form label, form input, form select {
+            display: block;
+            margin: 10px 0;
+        }
+        form input[type="submit"] {
+            background-color: #ffd700;
+            color: #1e3c72;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        form input[type="submit"]:hover {
+            background-color: #f4f4f4;
+            color: #1e3c72;
+        }
+        .team-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .team-card img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Basketball Matchups and Games</h1>
+        <img src="FunRunsMedia.png" alt="FunRuns Media Logo" class="logo">
+        <h1>Basketball League Manager</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#games">Upcoming Games</a></li>
+                <li><a href="#teams">Teams</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#stats">Stats</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <div class="banner">
+        <h2>Your One-Stop Basketball League Solution</h2>
+    </div>
+
     <section id="home">
-        <h2>Welcome to the Basketball Matchup Website</h2>
-        <p>Welcome basketball enthusiasts! Here you can find details about upcoming basketball games, register to join a match, and stay updated with schedules and results.</p>
+        <h2>Welcome to the Basketball League Manager</h2>
+        <p>Welcome basketball enthusiasts! Manage your league, schedule games, keep track of statistics, and stay updated with everything related to the league.</p>
     </section>
 
     <section id="about">
         <h2>About Us</h2>
-        <p>We are a community-driven platform for basketball lovers who want to set up and join games easily. Whether you're looking for a casual game or competitive matchup, we've got you covered.</p>
+        <p>We are a community-driven platform for basketball lovers to easily manage leagues, track stats, set up schedules, and stay connected. Whether you're managing a casual league or a competitive one, we've got you covered.</p>
     </section>
 
-    <section id="games">
-        <h2>Upcoming Games</h2>
+    <section id="teams">
+        <h2>Teams</h2>
+        <div class="team-card">
+            <img src="team1-logo.jpg" alt="Team 1 Logo">
+            <strong>Team 1:</strong> The Dunk Masters
+        </div>
+        <div class="team-card">
+            <img src="team2-logo.jpg" alt="Team 2 Logo">
+            <strong>Team 2:</strong> Fast Breakers
+        </div>
+        <div class="team-card">
+            <img src="team3-logo.jpg" alt="Team 3 Logo">
+            <strong>Team 3:</strong> Hoop Heroes
+        </div>
+        <div class="team-card">
+            <img src="team4-logo.jpg" alt="Team 4 Logo">
+            <strong>Team 4:</strong> Net Ninjas
+        </div>
+        <div class="team-card">
+            <img src="team5-logo.jpg" alt="Team 5 Logo">
+            <strong>Team 5:</strong> Alley-Oop Squad
+        </div>
+        <div class="team-card">
+            <img src="team6-logo.jpg" alt="Team 6 Logo">
+            <strong>Team 6:</strong> Rim Rockers
+        </div>
+        <!-- Add more team cards as needed -->
+    </section>
+
+    <section id="schedule">
+        <h2>Schedule</h2>
+        <p>Below is the upcoming schedule for games. You can also submit your preferred times for matches:</p>
         <ul>
             <li>
-                <strong>3-on-3 Pickup Game</strong><br>
+                <strong>Team 1 vs Team 2</strong><br>
                 Location: Downtown Court, Saturday 3 PM
             </li>
             <li>
-                <strong>Full-Court Game</strong><br>
+                <strong>Team 3 vs Team 4</strong><br>
                 Location: City Park, Sunday 5 PM
             </li>
+        </ul>
+        <form>
+            <label for="team">Select Your Team:</label>
+            <select id="team" name="team">
+                <option value="team1">The Dunk Masters</option>
+                <option value="team2">Fast Breakers</option>
+                <option value="team3">Hoop Heroes</option>
+                <option value="team4">Net Ninjas</option>
+                <option value="team5">Alley-Oop Squad</option>
+                <option value="team6">Rim Rockers</option>
+                <option value="team7">Court Kings</option>
+                <option value="team8">Basket Brawlers</option>
+                <option value="team9">Dribble Demons</option>
+                <option value="team10">Shot Swishers</option>
+                <option value="team11">Block Busters</option>
+                <option value="team12">Rebound Rulers</option>
+            </select>
+            <br>
+            <label for="preferred-time">Preferred Game Time:</label>
+            <input type="datetime-local" id="preferred-time" name="preferred-time">
+            <br>
+            <input type="submit" value="Submit Preference">
+        </form>
+    </section>
+
+    <section id="stats">
+        <h2>Team Statistics</h2>
+        <p>Keep track of your team's performance throughout the season:</p>
+        <ul>
+            <li><strong>The Dunk Masters:</strong> Wins: 5, Losses: 2</li>
+            <li><strong>Fast Breakers:</strong> Wins: 3, Losses: 4</li>
+            <li><strong>Hoop Heroes:</strong> Wins: 4, Losses: 3</li>
+            <!-- Add more stats as needed -->
         </ul>
     </section>
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>If you'd like to organize a game or join one, contact us at: <a href="mailto:info@basketballgames.com">info@basketballgames.com</a></p>
+        <p>If you'd like to organize a game, join one, or have questions about managing your team, contact us at: <a href="mailto:info@basketballgames.com">info@basketballgames.com</a></p>
     </section>
 
     <footer>
-        <p>&copy; 2024 Basketball Matchups. All rights reserved.</p>
+        <p>&copy; 2024 Basketball League Manager. All rights reserved.</p>
     </footer>
 </body>
 </html>
