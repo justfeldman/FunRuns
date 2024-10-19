@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LBL - Team Statistics</title>
+    <title>LBL - Stats and Standings</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -54,23 +54,38 @@
             color: #ffd700;
             font-size: 2.5em;
         }
-        .stats-container ul {
-            list-style-type: none;
-            padding: 0;
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        .stats-container li {
-            background: rgba(255, 255, 255, 0.1);
-            margin: 10px 0;
-            padding: 10px;
+        .standings-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
             border-radius: 10px;
+        }
+        .conference-standings {
+            width: 45%;
+        }
+        .conference-standings h3 {
+            text-align: center;
+            color: #ffd700;
+        }
+        .team-standing {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .team-standing span {
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>LBL - Team Statistics</h1>
+        <h1>LBL - Stats and Standings</h1>
         <nav>
             <ul>
                 <li><a href="funruns.html">Home</a></li> <!-- Link to Home -->
@@ -88,17 +103,69 @@
     </header>
 
     <div class="stats-container">
-        <h2>Team Statistics</h2>
-        <p>Keep track of your team's performance throughout the season:</p>
-        <ul>
-            <li><strong>The Dunk Masters:</strong> Wins: 5, Losses: 2</li>
-            <li><strong>Fast Breakers:</strong> Wins: 3, Losses: 4</li>
-            <li><strong>Hoop Heroes:</strong> Wins: 4, Losses: 3</li>
-            <li><strong>Net Ninjas:</strong> Wins: 6, Losses: 1</li>
-            <li><strong>Alley-Oop Squad:</strong> Wins: 2, Losses: 5</li>
-            <li><strong>Rim Rockers:</strong> Wins: 3, Losses: 4</li>
-            <!-- Add more stats as needed -->
-        </ul>
+        <h2>Stats and Standings</h2>
+        <p>Keep track of your team's performance and league standings throughout the season.</p>
+
+        <!-- Standings for Eastern and Western Conference -->
+        <div class="standings-container">
+            <div class="conference-standings" id="easternConference">
+                <h3>Eastern Conference</h3>
+                <div class="team-standing">
+                    <span>1</span>
+                    <span>The Dunk Masters - Wins: 10, Losses: 2</span>
+                </div>
+                <div class="team-standing">
+                    <span>2</span>
+                    <span>Fast Breakers - Wins: 8, Losses: 4</span>
+                </div>
+                <div class="team-standing">
+                    <span>3</span>
+                    <span>Hoop Heroes - Wins: 7, Losses: 5</span>
+                </div>
+                <div class="team-standing">
+                    <span>4</span>
+                    <span>Net Ninjas - Wins: 6, Losses: 6</span>
+                </div>
+                <div class="team-standing">
+                    <span>5</span>
+                    <span>Alley-Oop Squad - Wins: 5, Losses: 7</span>
+                </div>
+                <div class="team-standing">
+                    <span>6</span>
+                    <span>Rim Rockers - Wins: 4, Losses: 8</span>
+                </div>
+                <!-- Add more Eastern Conference teams -->
+            </div>
+
+            <div class="conference-standings" id="westernConference">
+                <h3>Western Conference</h3>
+                <div class="team-standing">
+                    <span>1</span>
+                    <span>Court Kings - Wins: 9, Losses: 3</span>
+                </div>
+                <div class="team-standing">
+                    <span>2</span>
+                    <span>Basket Brawlers - Wins: 8, Losses: 4</span>
+                </div>
+                <div class="team-standing">
+                    <span>3</span>
+                    <span>Dribble Demons - Wins: 7, Losses: 5</span>
+                </div>
+                <div class="team-standing">
+                    <span>4</span>
+                    <span>Shot Swishers - Wins: 6, Losses: 6</span>
+                </div>
+                <div class="team-standing">
+                    <span>5</span>
+                    <span>Block Busters - Wins: 5, Losses: 7</span>
+                </div>
+                <div class="team-standing">
+                    <span>6</span>
+                    <span>Rebound Rulers - Wins: 4, Losses: 8</span>
+                </div>
+                <!-- Add more Western Conference teams -->
+            </div>
+        </div>
     </div>
 
     <footer>
