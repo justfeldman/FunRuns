@@ -146,6 +146,27 @@
             border-radius: 10px;
             text-align: center;
         }
+        .player-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .player-card img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .analytics-placeholder {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -159,8 +180,11 @@
                 <li><a href="#teams">Teams</a></li>
                 <li><a href="#schedule">Schedule</a></li>
                 <li><a href="#stats">Stats</a></li>
+                <li><a href="#players">Players</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#submit-video">Submit Video</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+                <li><a href="#analytics">Analytics</a></li>
             </ul>
         </nav>
     </header>
@@ -206,6 +230,23 @@
             <strong>Team 6:</strong> Rim Rockers
         </div>
         <!-- Add more team cards as needed -->
+    </section>
+
+    <section id="players">
+        <h2>Player Profiles</h2>
+        <div class="player-card">
+            <img src="player1.jpg" alt="Player 1 Photo">
+            <strong>John Doe:</strong> Position: Guard, Points per Game: 15.2, Assists: 4.3, Rebounds: 3.1
+        </div>
+        <div class="player-card">
+            <img src="player2.jpg" alt="Player 2 Photo">
+            <strong>Jane Smith:</strong> Position: Forward, Points per Game: 18.7, Assists: 2.1, Rebounds: 8.4
+        </div>
+        <div class="player-card">
+            <img src="player3.jpg" alt="Player 3 Photo">
+            <strong>Mike Johnson:</strong> Position: Center, Points per Game: 12.5, Assists: 1.8, Rebounds: 10.2
+        </div>
+        <!-- Add more player profiles as needed -->
     </section>
 
     <section id="schedule">
@@ -265,6 +306,23 @@
             <textarea id="description" name="description" rows="4"></textarea>
             <input type="submit" value="Submit Video">
         </form>
+    </section>
+
+    <section id="notifications">
+        <h2>Sign Up for Notifications</h2>
+        <p>Stay updated with the latest game schedules and league announcements. Sign up to receive email notifications.</p>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            <input type="submit" value="Sign Up">
+        </form>
+    </section>
+
+    <section id="analytics">
+        <h2>League Analytics (Coming Soon)</h2>
+        <div class="analytics-placeholder">
+            <p>Analytics features are under development. Here, you'll be able to view key statistics about teams, player performances, and league trends.</p>
+        </div>
     </section>
 
     <section id="contact">
