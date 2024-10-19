@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LBL - Stats and Standings</title>
+    <title>LBL - Standings</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -42,7 +42,7 @@
         nav ul li a:hover {
             color: #f4f4f4;
         }
-        .stats-container {
+        .standings-container {
             padding: 50px;
             margin: 0 auto;
             width: 80%;
@@ -50,22 +50,22 @@
             border-radius: 15px;
             text-align: center;
         }
-        .stats-container h2 {
+        .standings-container h2 {
             color: #ffd700;
             font-size: 2.5em;
         }
-        .standings-container {
+        .conference-standings {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             margin-top: 20px;
+        }
+        .conference {
+            width: 45%;
             background: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-radius: 10px;
         }
-        .conference-standings {
-            width: 45%;
-        }
-        .conference-standings h3 {
+        .conference h3 {
             text-align: center;
             color: #ffd700;
         }
@@ -85,7 +85,7 @@
 </head>
 <body>
     <header>
-        <h1>LBL - Stats and Standings</h1>
+        <h1>LBL - Standings</h1>
         <nav>
             <ul>
                 <li><a href="funruns.html">Home</a></li>
@@ -102,13 +102,13 @@
         </nav>
     </header>
 
-    <div class="stats-container">
-        <h2>Stats and Standings</h2>
-        <p>Keep track of your team's performance and league standings throughout the season.</p>
+    <div class="standings-container">
+        <h2>Standings</h2>
+        <p>Current standings for the 2024 season.</p>
 
-        <!-- Standings for Eastern and Western Conference -->
-        <div class="standings-container">
-            <div class="conference-standings" id="easternConference">
+        <!-- Standings for Eastern and Western Conference with 6 teams each -->
+        <div class="conference-standings">
+            <div class="conference" id="easternConference">
                 <h3>Eastern Conference</h3>
                 <div class="team-standing">
                     <span>1</span>
@@ -118,10 +118,25 @@
                     <span>2</span>
                     <span>Fast Breakers - Wins: 8, Losses: 4</span>
                 </div>
-                <!-- Add more Eastern Conference teams -->
+                <div class="team-standing">
+                    <span>3</span>
+                    <span>Hoop Heroes - Wins: 7, Losses: 5</span>
+                </div>
+                <div class="team-standing">
+                    <span>4</span>
+                    <span>Net Ninjas - Wins: 6, Losses: 6</span>
+                </div>
+                <div class="team-standing">
+                    <span>5</span>
+                    <span>Alley-Oop Squad - Wins: 5, Losses: 7</span>
+                </div>
+                <div class="team-standing">
+                    <span>6</span>
+                    <span>Rim Rockers - Wins: 4, Losses: 8</span>
+                </div>
             </div>
 
-            <div class="conference-standings" id="westernConference">
+            <div class="conference" id="westernConference">
                 <h3>Western Conference</h3>
                 <div class="team-standing">
                     <span>1</span>
@@ -131,7 +146,22 @@
                     <span>2</span>
                     <span>Basket Brawlers - Wins: 8, Losses: 4</span>
                 </div>
-                <!-- Add more Western Conference teams -->
+                <div class="team-standing">
+                    <span>3</span>
+                    <span>Dribble Demons - Wins: 7, Losses: 5</span>
+                </div>
+                <div class="team-standing">
+                    <span>4</span>
+                    <span>Shot Swishers - Wins: 6, Losses: 6</span>
+                </div>
+                <div class="team-standing">
+                    <span>5</span>
+                    <span>Block Busters - Wins: 5, Losses: 7</span>
+                </div>
+                <div class="team-standing">
+                    <span>6</span>
+                    <span>Rebound Rulers - Wins: 4, Losses: 8</span>
+                </div>
             </div>
         </div>
     </div>
