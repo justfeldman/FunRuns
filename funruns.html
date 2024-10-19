@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basketball League Manager</title>
+    <title>LBL - London Basketball League</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -167,12 +167,67 @@
             margin: 20px 0;
             text-align: center;
         }
+        .standings-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .conference-standings {
+            width: 45%;
+        }
+        .conference-standings h3 {
+            text-align: center;
+            color: #ffd700;
+        }
+        .team-standing {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .team-standing span {
+            font-size: 1.2em;
+        }
+        .search-bar {
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: none;
+        }
+        .scrollable-player-list {
+            max-height: 300px;
+            overflow-y: scroll;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .player-list-item {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .player-list-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body>
     <header>
         <img src="FunRunsMedia.png" alt="FunRuns Media Logo" class="logo">
-        <h1>Basketball League Manager</h1>
+        <h1>LBL - London Basketball League</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -190,148 +245,76 @@
     </header>
 
     <div class="banner">
-        <h2>Your One-Stop Basketball League Solution</h2>
+        <h2>Welcome to the London Basketball League</h2>
     </div>
 
-    <section id="home">
-        <h2>Welcome to the Basketball League Manager</h2>
-        <p>Welcome basketball enthusiasts! Manage your league, schedule games, keep track of statistics, and stay updated with everything related to the league.</p>
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are a community-driven platform for basketball lovers to easily manage leagues, track stats, set up schedules, and stay connected. Whether you're managing a casual league or a competitive one, we've got you covered.</p>
-    </section>
-
-    <section id="teams">
-        <h2>Teams</h2>
-        <div class="team-card">
-            <img src="team1-logo.jpg" alt="Team 1 Logo">
-            <strong>Team 1:</strong> The Dunk Masters
-        </div>
-        <div class="team-card">
-            <img src="team2-logo.jpg" alt="Team 2 Logo">
-            <strong>Team 2:</strong> Fast Breakers
-        </div>
-        <div class="team-card">
-            <img src="team3-logo.jpg" alt="Team 3 Logo">
-            <strong>Team 3:</strong> Hoop Heroes
-        </div>
-        <div class="team-card">
-            <img src="team4-logo.jpg" alt="Team 4 Logo">
-            <strong>Team 4:</strong> Net Ninjas
-        </div>
-        <div class="team-card">
-            <img src="team5-logo.jpg" alt="Team 5 Logo">
-            <strong>Team 5:</strong> Alley-Oop Squad
-        </div>
-        <div class="team-card">
-            <img src="team6-logo.jpg" alt="Team 6 Logo">
-            <strong>Team 6:</strong> Rim Rockers
-        </div>
-        <!-- Add more team cards as needed -->
-    </section>
-
     <section id="players">
-        <h2>Player Profiles</h2>
-        <div class="player-card">
-            <img src="player1.jpg" alt="Player 1 Photo">
-            <strong>John Doe:</strong> Position: Guard, Points per Game: 15.2, Assists: 4.3, Rebounds: 3.1
+        <h2>Leading Scorers</h2>
+        <div class="search-bar">
+            <input type="text" id="playerSearch" placeholder="Search for a player...">
         </div>
-        <div class="player-card">
-            <img src="player2.jpg" alt="Player 2 Photo">
-            <strong>Jane Smith:</strong> Position: Forward, Points per Game: 18.7, Assists: 2.1, Rebounds: 8.4
-        </div>
-        <div class="player-card">
-            <img src="player3.jpg" alt="Player 3 Photo">
-            <strong>Mike Johnson:</strong> Position: Center, Points per Game: 12.5, Assists: 1.8, Rebounds: 10.2
-        </div>
-        <!-- Add more player profiles as needed -->
-    </section>
-
-    <section id="schedule">
-        <h2>Sunday Schedule</h2>
-        <p>The league holds four games every Sunday. Below is the upcoming schedule for games. You can also submit your preferred times for matches:</p>
-        <div class="schedule-day">
-            <ul id="schedule-list">
-                <!-- Initial schedule rendered by JavaScript -->
-            </ul>
-        </div>
-        <form id="schedule-form">
-            <label for="team">Select Your Team:</label>
-            <select id="team" name="team">
-                <option value="team1">The Dunk Masters</option>
-                <option value="team2">Fast Breakers</option>
-                <option value="team3">Hoop Heroes</option>
-                <option value="team4">Net Ninjas</option>
-                <option value="team5">Alley-Oop Squad</option>
-                <option value="team6">Rim Rockers</option>
-                <option value="team7">Court Kings</option>
-                <option value="team8">Basket Brawlers</option>
-                <option value="team9">Dribble Demons</option>
-                <option value="team10">Shot Swishers</option>
-                <option value="team11">Block Busters</option>
-                <option value="team12">Rebound Rulers</option>
-            </select>
-            <br>
-            <label for="preferred-time">Preferred Game Time:</label>
-            <input type="datetime-local" id="preferred-time" name="preferred-time">
-            <br>
-            <input type="submit" value="Submit Preference">
-        </form>
-    </section>
-
-    <section id="stats">
-        <h2>Team Statistics</h2>
-        <p>Keep track of your team's performance throughout the season:</p>
-        <ul>
-            <li><strong>The Dunk Masters:</strong> Wins: 5, Losses: 2</li>
-            <li><strong>Fast Breakers:</strong> Wins: 3, Losses: 4</li>
-            <li><strong>Hoop Heroes:</strong> Wins: 4, Losses: 3</li>
-            <!-- Add more stats as needed -->
-        </ul>
-    </section>
-
-    <section id="submit-video">
-        <h2>Submit Your Game Video</h2>
-        <p>Have a video of a game or a highlight reel that you'd like to share? Use the form below to submit your video link for review. We accept links from platforms like YouTube or Vimeo.</p>
-        <form action="https://formspree.io/f/xrbggwww" method="POST">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="team">Team or Game:</label>
-            <input type="text" id="team" name="team" required>
-            <label for="video-link">Video Link (YouTube or Vimeo):</label>
-            <input type="url" id="video-link" name="video-link" required>
-            <label for="description">Comments/Description:</label>
-            <textarea id="description" name="description" rows="4"></textarea>
-            <input type="submit" value="Submit Video">
-        </form>
-    </section>
-
-    <section id="notifications">
-        <h2>Sign Up for Notifications</h2>
-        <p>Stay updated with the latest game schedules and league announcements. Sign up to receive email notifications.</p>
-        <form action="https://formspree.io/f/xrbggwww" method="POST">
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required>
-            <input type="submit" value="Sign Up">
-        </form>
-    </section>
-
-    <section id="analytics">
-        <h2>League Analytics (Coming Soon)</h2>
-        <div class="analytics-placeholder">
-            <p>Analytics features are under development. Here, you'll be able to view key statistics about teams, player performances, and league trends.</p>
+        <div class="scrollable-player-list" id="playerList">
+            <div class="player-list-item" onclick="window.location.href='player1.html'">
+                John Doe - Points: 20.5, Assists: 5.3, Rebounds: 6.1
+            </div>
+            <div class="player-list-item" onclick="window.location.href='player2.html'">
+                Jane Smith - Points: 18.7, Assists: 7.4, Rebounds: 5.6
+            </div>
+            <div class="player-list-item" onclick="window.location.href='player3.html'">
+                Mike Johnson - Points: 22.1, Assists: 3.8, Rebounds: 8.7
+            </div>
+            <!-- Additional players will be listed here -->
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>If you'd like to organize a game, join one, or have questions about managing your team, contact us at: <a href="mailto:info@basketballgames.com">info@basketballgames.com</a></p>
+    <section id="standings">
+        <h2>League Standings</h2>
+        <div class="standings-container">
+            <div class="conference-standings" id="easternConference">
+                <h3>Eastern Conference</h3>
+                <div class="team-standing">
+                    <span>1</span>
+                    <span>The Dunk Masters - Wins: 10, Losses: 2</span>
+                </div>
+                <div class="team-standing">
+                    <span>2</span>
+                    <span>Fast Breakers - Wins: 8, Losses: 4</span>
+                </div>
+                <!-- Additional teams for Eastern Conference -->
+            </div>
+            <div class="conference-standings" id="westernConference">
+                <h3>Western Conference</h3>
+                <div class="team-standing">
+                    <span>1</span>
+                    <span>Net Ninjas - Wins: 9, Losses: 3</span>
+                </div>
+                <div class="team-standing">
+                    <span>2</span>
+                    <span>Rim Rockers - Wins: 7, Losses: 5</span>
+                </div>
+                <!-- Additional teams for Western Conference -->
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Basketball League Manager. All rights reserved.</p>
+        <p>&copy; 2024 London Basketball League. All rights reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript for Player Search Functionality
+        document.getElementById('playerSearch').addEventListener('input', function() {
+            const filter = this.value.toLowerCase();
+            const players = document.getElementById('playerList').getElementsByClassName('player-list-item');
+            for (let i = 0; i < players.length; i++) {
+                const player = players[i];
+                if (player.textContent.toLowerCase().includes(filter)) {
+                    player.style.display = "block";
+                } else {
+                    player.style.display = "none";
+                }
+            }
+        });
+    </script>
 </body>
 </html>
