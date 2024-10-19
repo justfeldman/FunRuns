@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LBL - London Basketball League</title>
+    <title>LBL - Home</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(to right, #1e3c72, #2a5298);
-            color: #f4f4f4;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         header {
             background: rgba(0, 0, 0, 0.8);
@@ -29,6 +29,7 @@
             list-style-type: none;
             padding: 0;
             text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
         }
         nav ul li {
             display: inline;
@@ -43,29 +44,40 @@
         nav ul li a:hover {
             color: #f4f4f4;
         }
-        .banner {
-            background: url('basketball-banner.jpg') no-repeat center center;
-            background-size: cover;
-            height: 400px;
+        .slideshow-container {
             position: relative;
+            max-width: 100%;
+            height: 80vh;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            animation: fade 2s infinite;
+        }
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            background-color: rgba(75, 0, 130, 0.7); /* Purple overlay */
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
         }
-        .banner h2 {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #ffd700;
-            font-size: 2.5em;
-            text-shadow: 2px 2px #000;
-        }
-        section {
-            padding: 50px;
-            background: rgba(0, 0, 0, 0.6);
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 15px;
-            position: relative;
+        @keyframes fade {
+            0% { opacity: 0; }
+            25% { opacity: 1; }
+            75% { opacity: 1; }
+            100% { opacity: 0; }
         }
     </style>
 </head>
@@ -78,7 +90,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="teams.html">Teams</a></li>
                 <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="statistics.html">Standings</a></li> <!-- Updated label -->
+                <li><a href="statistics.html">Standings</a></li>
                 <li><a href="players.html">Players</a></li>
                 <li><a href="gametape.html">Game Tape</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -88,19 +100,43 @@
         </nav>
     </header>
 
-    <div class="banner">
-        <h2>Welcome to the London Basketball League</h2>
+    <div class="slideshow-container">
+        <!-- Slideshow images -->
+        <div class="slide" style="background-image: url('/mnt/data/Screen Shot 2024-10-19 at 1.00.43 AM.png');"></div>
+        <div class="slide" style="background-image: url('/mnt/data/Screenshot 2024-10-19 010806.png');"></div>
+        <div class="slide" style="background-image: url('/mnt/data/Screenshot 2024-10-19 010747.png');"></div>
+        <div class="slide" style="background-image: url('/mnt/data/Screenshot 2024-10-19 010551.png');"></div>
+        <div class="slide" style="background-image: url('/mnt/data/Screenshot 2024-10-19 010539.png');"></div>
+
+        <!-- Overlay text -->
+        <div class="overlay">Your Local London Basketball League</div>
     </div>
-
-    <section id="home">
-        <h2>Welcome to the Basketball League Manager</h2>
-        <p>Welcome basketball enthusiasts! Manage your league, schedule games, keep track of statistics, and stay updated with everything related to the league.</p>
-    </section>
-
-    <!-- Other sections remain unchanged -->
 
     <footer>
         <p>&copy; 2024 London Basketball League. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Slideshow functionality
+        let slides = document.getElementsByClassName('slide');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[index].style.display = 'block';
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        // Initial display
+        showSlide(currentIndex);
+        // Change slides every 2 seconds
+        setInterval(nextSlide, 2000);
+    </script>
 </body>
 </html>
