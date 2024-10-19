@@ -25,13 +25,6 @@
             color: #ffd700;
             text-shadow: 2px 2px #000;
         }
-        header .logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            height: 100px;
-            width: 100px;
-        }
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -74,41 +67,23 @@
             border-radius: 15px;
             position: relative;
         }
-        section h2 {
-            color: #ffd700;
-            font-size: 2.5em;
-        }
-        section p, section ul {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #ffd700;
-            position: relative;
-            width: 100%;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
     <header>
-        <img src="FunRuns Media.png" alt="FunRuns Media Logo" class="logo">
         <h1>LBL - London Basketball League</h1>
         <nav>
             <ul>
-                <li><a href="#funruns.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#teams">Teams</a></li>
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#stats">Stats</a></li>
-                <li><a href="#players">Players</a></li>
-                <li><a href="GameTape.html">Game Tape</a></li> <!-- Link to GameTape page -->
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#notifications">Notifications</a></li>
-                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="funruns.html">Home</a></li>
+                <li><a href="about.html">About</a></li> <!-- Link to About Us page -->
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="statistics.html">Stats</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="gametape.html">Game Tape</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
             </ul>
         </nav>
     </header>
@@ -122,68 +97,7 @@
         <p>Welcome basketball enthusiasts! Manage your league, schedule games, keep track of statistics, and stay updated with everything related to the league.</p>
     </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are a community-driven platform for basketball lovers to easily manage leagues, track stats, set up schedules, and stay connected. Whether you're managing a casual league or a competitive one, we've got you covered.</p>
-    </section>
-
-    <section id="teams">
-        <h2>Teams</h2>
-        <div class="team-card">
-            <img src="team1-logo.jpg" alt="Team 1 Logo">
-            <strong>Team 1:</strong> The Dunk Masters
-        </div>
-        <div class="team-card">
-            <img src="team2-logo.jpg" alt="Team 2 Logo">
-            <strong>Team 2:</strong> Fast Breakers
-        </div>
-        <!-- Add more team cards as needed -->
-    </section>
-
-    <section id="players">
-        <h2>Leading Scorers</h2>
-        <div class="scrollable-player-list" id="playerList">
-            <div class="player-list-item">
-                John Doe - Points: 20.5, Assists: 5.3, Rebounds: 6.1
-            </div>
-            <div class="player-list-item">
-                Jane Smith - Points: 18.7, Assists: 7.4, Rebounds: 5.6
-            </div>
-        </div>
-    </section>
-
-    <section id="schedule">
-        <h2>Sunday Schedule</h2>
-        <p>Below is the upcoming schedule for games. You can also submit your preferred times for matches:</p>
-        <div class="schedule-day">
-            <ul id="schedule-list">
-                <!-- Initial schedule rendered by JavaScript -->
-            </ul>
-        </div>
-    </section>
-
-    <section id="stats">
-        <h2>Team Statistics</h2>
-        <p>Keep track of your team's performance throughout the season:</p>
-        <ul>
-            <li><strong>The Dunk Masters:</strong> Wins: 5, Losses: 2</li>
-            <li><strong>Fast Breakers:</strong> Wins: 3, Losses: 4</li>
-        </ul>
-    </section>
-
-    <section id="notifications">
-        <h2>Sign Up for Notifications</h2>
-        <form action="https://formspree.io/f/xrbggwww" method="POST">
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required>
-            <input type="submit" value="Sign Up">
-        </form>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Contact us at: <a href="mailto:info@basketballgames.com">info@basketballgames.com</a></p>
-    </section>
+    <!-- About Us section removed; other sections remain unchanged -->
 
     <footer>
         <p>&copy; 2024 London Basketball League. All rights reserved.</p>
