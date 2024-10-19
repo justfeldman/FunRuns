@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LBL - Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #d81e05;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            background: #d81e05;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .schedule-container {
+            padding: 20px;
+            margin: 0 auto;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .schedule-container h2 {
+            color: #d81e05;
+            font-size: 2em;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #d81e05;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+        .team-logo {
+            height: 30px;
+            vertical-align: middle;
+        }
+        .preview-btn {
+            background-color: #fff;
+            color: #d81e05;
+            border: 1px solid #d81e05;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .preview-btn:hover {
+            background-color: #d81e05;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LBL - Schedule</h1>
+        <nav>
+            <ul>
+                <li><a href="funruns.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="statistics.html">Standings</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="gametape.html">Game Tape</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="schedule-container">
+        <h2>Fall '24 Schedule</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Home vs Away</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Watch Live</th>
+                    <th>Facility</th>
+                    <th>Court</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="home-logo.png" class="team-logo" alt="BBL SHAKERS"> BBL SHAKERS vs Connex E 
+                        <img src="away-logo.png" class="team-logo" alt="Connex E">
+                    </td>
+                    <td>20 October 2024</td>
+                    <td>06:05 PM</td>
+                    <td><button class="preview-btn">Preview</button></td>
+                    <td>PSH North</td>
+                    <td>Court 1</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="home-logo.png" class="team-logo" alt="Deadeye"> Deadeye vs Kung Pao 
+                        <img src="away-logo.png" class="team-logo" alt="Kung Pao">
+                    </td>
+                    <td>20 October 2024</td>
+                    <td>07:05 PM</td>
+                    <td><button class="preview-btn">Preview</button></td>
+                    <td>PSH North</td>
+                    <td>Court 1</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="home-logo.png" class="team-logo" alt="The BusinessMen"> The BusinessMen vs The Fundamentals 
+                        <img src="away-logo.png" class="team-logo" alt="The Fundamentals">
+                    </td>
+                    <td>20 October 2024</td>
+                    <td>08:05 PM</td>
+                    <td><button class="preview-btn">Preview</button></td>
+                    <td>PSH North</td>
+                    <td>Court 1</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="home-logo.png" class="team-logo" alt="Kung Pao"> Kung Pao vs Connex E 
+                        <img src="away-logo.png" class="team-logo" alt="Connex E">
+                    </td>
+                    <td>27 October 2024</td>
+                    <td>06:05 PM</td>
+                    <td><button class="preview-btn">Preview</button></td>
+                    <td>PSH North</td>
+                    <td>Court 1</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="home-logo.png" class="team-logo" alt="Deadeye"> Deadeye vs The Fundamentals 
+                        <img src="away-logo.png" class="team-logo" alt="The Fundamentals">
+                    </td>
+                    <td>27 October 2024</td>
+                    <td>07:05 PM</td>
+                    <td><button class="preview-btn">Preview</button></td>
+                    <td>PSH North</td>
+                    <td>Court 1</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="home-logo.png" class="team-logo" alt="BBL SHAKERS"> BBL SHAKERS vs The BusinessMen 
+                        <img src="away-logo.png" class="team-logo" alt="The BusinessMen">
+                    </td>
+                    <td>27 October 2024</td>
+                    <td>08:05 PM</td>
+                    <td><button class="preview-btn">Preview</button></td>
+                    <td>PSH North</td>
+                    <td>Court 1</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 London Basketball League. All rights reserved.</p>
+    </footer>
+</body>
+</html>
