@@ -92,10 +92,14 @@
         }
         form {
             margin-top: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
         }
         form label, form input, form select {
             display: block;
             margin: 10px 0;
+            font-size: 1.2em;
         }
         form input[type="submit"] {
             background-color: #ffd700;
@@ -125,21 +129,65 @@
             border-radius: 50%;
             margin-right: 15px;
         }
+        .schedule-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .schedule-slot {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 10px;
+            text-align: center;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const scheduleForm = document.getElementById('schedule-form');
             const scheduleList = document.getElementById('schedule-list');
 
+            // Array to store the existing schedules
+            const schedules = [
+                { team1: 'Team 1', team2: 'Team 2', time: new Date('2024-10-20T15:00:00'), location: 'Downtown Court' },
+                { team1: 'Team 3', team2: 'Team 4', time: new Date('2024-10-21T17:00:00'), location: 'City Park' }
+            ];
+
+            // Function to render the schedule list
+            function renderSchedule() {
+                scheduleList.innerHTML = '';
+                schedules.forEach(schedule => {
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('schedule-slot');
+                    listItem.innerHTML = `<strong>${schedule.team1} vs ${schedule.team2}</strong><br>Location: ${schedule.location}, ${schedule.time.toLocaleString()}`;
+                    scheduleList.appendChild(listItem);
+                });
+            }
+
+            // Render initial schedule
+            renderSchedule();
+
             scheduleForm.addEventListener('submit', function (event) {
                 event.preventDefault();
                 const team = document.getElementById('team').value;
-                const preferredTime = document.getElementById('preferred-time').value;
+                const preferredTime = new Date(document.getElementById('preferred-time').value);
 
-                if (team && preferredTime) {
-                    const listItem = document.createElement('li');
-                    listItem.innerHTML = `<strong>${team}</strong> - Preferred Time: ${new Date(preferredTime).toLocaleString()}`;
-                    scheduleList.appendChild(listItem);
+                // Conflict detection logic
+                const conflict = schedules.some(schedule => {
+                    return Math.abs(preferredTime - schedule.time) < 2 * 60 * 60 * 1000; // 2 hours buffer time
+                });
+
+                if (conflict) {
+                    alert('The selected time conflicts with an existing game. Please choose a different time.');
+                } else {
+                    // Add new schedule entry
+                    schedules.push({ team1: team, team2: 'TBD', time: preferredTime, location: 'TBD' });
+                    renderSchedule();
                 }
             });
         });
@@ -205,18 +253,13 @@
     </section>
 
     <section id="schedule">
-        <h2>Schedule</h2>
-        <p>Below is the upcoming schedule for games. You can also submit your preferred times for matches:</p>
-        <ul id="schedule-list">
-            <li>
-                <strong>Team 1 vs Team 2</strong><br>
-                Location: Downtown Court, Saturday 3 PM
-            </li>
-            <li>
-                <strong>Team 3 vs Team 4</strong><br>
-                Location: City Park, Sunday 5 PM
-            </li>
-        </ul>
+        <h2>Sunday Schedule</h2>
+        <p>The league holds four games every Sunday. Below is the upcoming schedule for games. You can also submit your preferred times for matches:</p>
+        <div class="schedule-day">
+            <ul id="schedule-list">
+                <!-- Initial schedule rendered by JavaScript -->
+            </ul>
+        </div>
         <form id="schedule-form">
             <label for="team">Select Your Team:</label>
             <select id="team" name="team">
