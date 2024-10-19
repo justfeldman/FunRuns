@@ -126,6 +126,24 @@
             margin-right: 15px;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scheduleForm = document.getElementById('schedule-form');
+            const scheduleList = document.getElementById('schedule-list');
+
+            scheduleForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const team = document.getElementById('team').value;
+                const preferredTime = document.getElementById('preferred-time').value;
+
+                if (team && preferredTime) {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<strong>${team}</strong> - Preferred Time: ${new Date(preferredTime).toLocaleString()}`;
+                    scheduleList.appendChild(listItem);
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -189,7 +207,7 @@
     <section id="schedule">
         <h2>Schedule</h2>
         <p>Below is the upcoming schedule for games. You can also submit your preferred times for matches:</p>
-        <ul>
+        <ul id="schedule-list">
             <li>
                 <strong>Team 1 vs Team 2</strong><br>
                 Location: Downtown Court, Saturday 3 PM
@@ -199,7 +217,7 @@
                 Location: City Park, Sunday 5 PM
             </li>
         </ul>
-        <form>
+        <form id="schedule-form">
             <label for="team">Select Your Team:</label>
             <select id="team" name="team">
                 <option value="team1">The Dunk Masters</option>
