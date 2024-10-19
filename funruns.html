@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
+            background: #4B0082; /* Deep purple background */
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -17,13 +17,6 @@
             background: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            color: #ffd700;
-            text-shadow: 2px 2px #000;
         }
         nav ul {
             list-style-type: none;
@@ -36,7 +29,7 @@
             margin: 0 15px;
         }
         nav ul li a {
-            color: #ffd700;
+            color: #FFD700;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
@@ -66,10 +59,11 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
-            font-size: 3em;
+            font-size: 4em;
+            font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            background-color: rgba(75, 0, 130, 0.7); /* Purple overlay */
             padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Black transparency */
             border-radius: 10px;
             text-align: center;
         }
@@ -101,15 +95,15 @@
     </header>
 
     <div class="slideshow-container">
-        <!-- Slideshow images -->
-        <div class="slide" style="background-image: url('Screen Shot 2024-10-19 at 1.00.43 AM.png');"></div>
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010806.png');"></div>
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010747.png');"></div>
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010551.png');"></div>
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010539.png');"></div>
+        <!-- Slideshow images with transparency -->
+        <div class="slide" style="background-image: url('/mnt/data/Screen Shot 2024-10-19 at 1.00.43 AM.png');"></div>
+        <div class="slide" style="background-image: url('/mnt/data/Screenshot 2024-10-19 010806.png');"></div>
+        <div class="slide" style="background-image: url('/mnt/data/Screenshot 2024-10-19 010747.png');"></div>
+        <div class="slide" style="background-image: url('/mnt/data/Screenshot 2024-10-19 010551.png');"></div>
+        <div class="slide" style="background-image: url('/mnt/data/Screenshot 2024-10-19 010539.png');"></div>
 
-        <!-- Overlay text -->
-        <div class="overlay">Your Local London Basketball League</div>
+        <!-- Bold overlay text -->
+        <div class="overlay">The London Basketball League</div>
     </div>
 
     <footer>
