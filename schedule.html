@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,88 +8,105 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f8f8f8;
+            background: #4B0082; /* Deep purple background */
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         header {
-            background: #d81e05;
-            padding: 20px;
-            text-align: center;
-            color: white;
+            background: #4B0082;
+            padding: 10px 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
+        .header-logo {
+            height: 80px; /* Consistent logo size */
+            margin-right: 10px;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
+            margin: 0 auto;
             text-align: center;
-            background: #d81e05;
-            margin: 0;
+            flex: 1;
+            background-color: #4B0082;
         }
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
         nav ul li a {
-            color: #fff;
+            color: white;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #FFD700;
         }
         .schedule-container {
+            max-width: 80%;
+            margin: 50px auto;
             padding: 20px;
-            margin: 0 auto;
-            width: 90%;
-            max-width: 1200px;
+            background-color: rgba(0, 0, 0, 0.7); /* Black overlay for contrast */
+            border-radius: 10px;
+            color: white;
         }
-        .schedule-container h2 {
-            color: #d81e05;
-            font-size: 2em;
-            text-align: center;
+        .week-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .week-toggle button {
+            background-color: #FFD700;
+            color: #4B0082;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .week-toggle button:hover {
+            background-color: white;
+            color: #4B0082;
+        }
+        .schedule-week {
+            display: none;
+        }
+        .schedule-week.active {
+            display: block;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-        table, th, td {
-            border: 1px solid #ddd;
+        th, td {
+            padding: 12px;
+            border: 1px solid white;
+            text-align: center;
         }
         th {
-            background-color: #d81e05;
-            color: white;
-            padding: 10px;
-            text-align: center;
+            background-color: #FFD700;
+            color: #4B0082;
         }
-        td {
-            padding: 10px;
-            text-align: center;
-        }
-        .team-logo {
-            height: 30px;
-            vertical-align: middle;
-        }
-        .preview-btn {
-            background-color: #fff;
-            color: #d81e05;
-            border: 1px solid #d81e05;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .preview-btn:hover {
-            background-color: #d81e05;
-            color: white;
+        .fall-24 {
+            color: #FFD700;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>LBL - Schedule</h1>
+        <img src="Screen Shot 2024-10-19 at 2.05.09 AM.png" alt="LBL Logo" class="header-logo">
         <nav>
             <ul>
                 <li><a href="funruns.html">Home</a></li>
@@ -107,92 +124,93 @@
     </header>
 
     <div class="schedule-container">
-        <h2>Fall '24 Schedule</h2>
-        <table>
-            <thead>
+        <!-- "Fall '24" text on the left -->
+        <div class="fall-24">Fall '24</div>
+
+        <!-- Week toggle buttons -->
+        <div class="week-toggle">
+            <!-- 12 weeks + Playoffs -->
+            <button onclick="showWeek(0)">Week 1</button>
+            <button onclick="showWeek(1)">Week 2</button>
+            <button onclick="showWeek(2)">Week 3</button>
+            <button onclick="showWeek(3)">Week 4</button>
+            <button onclick="showWeek(4)">Week 5</button>
+            <button onclick="showWeek(5)">Week 6</button>
+            <button onclick="showWeek(6)">Week 7</button>
+            <button onclick="showWeek(7)">Week 8</button>
+            <button onclick="showWeek(8)">Week 9</button>
+            <button onclick="showWeek(9)">Week 10</button>
+            <button onclick="showWeek(10)">Week 11</button>
+            <button onclick="showWeek(11)">Week 12</button>
+            <button onclick="showWeek(12)">Playoffs</button>
+        </div>
+
+        <!-- Schedule content for each week -->
+        <div class="schedule-week active" id="week-0">
+            <table>
                 <tr>
                     <th>Home vs Away</th>
                     <th>Date</th>
                     <th>Time</th>
-                    <th>Watch Live</th>
                     <th>Facility</th>
-                    <th>Court</th>
                 </tr>
-            </thead>
-            <tbody>
                 <tr>
-                    <td>
-                        <img src="home-logo.png" class="team-logo" alt="BBL SHAKERS"> BBL SHAKERS vs Connex E 
-                        <img src="away-logo.png" class="team-logo" alt="Connex E">
-                    </td>
+                    <td>BBL Shakers vs Connex E</td>
                     <td>20 October 2024</td>
                     <td>06:05 PM</td>
-                    <td><button class="preview-btn">Preview</button></td>
-                    <td>PSH North</td>
-                    <td>Court 1</td>
+                    <td>PSH North, Court 1</td>
                 </tr>
                 <tr>
-                    <td>
-                        <img src="home-logo.png" class="team-logo" alt="Deadeye"> Deadeye vs Kung Pao 
-                        <img src="away-logo.png" class="team-logo" alt="Kung Pao">
-                    </td>
+                    <td>Deadeye vs Kung Pao</td>
                     <td>20 October 2024</td>
                     <td>07:05 PM</td>
-                    <td><button class="preview-btn">Preview</button></td>
-                    <td>PSH North</td>
-                    <td>Court 1</td>
+                    <td>PSH North, Court 1</td>
+                </tr>
+                <!-- Add more games as needed -->
+            </table>
+        </div>
+
+        <!-- Add additional weeks' schedules here -->
+        <div class="schedule-week" id="week-1">
+            <table>
+                <tr>
+                    <th>Home vs Away</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Facility</th>
                 </tr>
                 <tr>
-                    <td>
-                        <img src="home-logo.png" class="team-logo" alt="The BusinessMen"> The BusinessMen vs The Fundamentals 
-                        <img src="away-logo.png" class="team-logo" alt="The Fundamentals">
-                    </td>
-                    <td>20 October 2024</td>
+                    <td>The BusinessMen vs The Fundamentals</td>
+                    <td>27 October 2024</td>
                     <td>08:05 PM</td>
-                    <td><button class="preview-btn">Preview</button></td>
-                    <td>PSH North</td>
-                    <td>Court 1</td>
+                    <td>PSH North, Court 1</td>
                 </tr>
                 <tr>
-                    <td>
-                        <img src="home-logo.png" class="team-logo" alt="Kung Pao"> Kung Pao vs Connex E 
-                        <img src="away-logo.png" class="team-logo" alt="Connex E">
-                    </td>
+                    <td>Kung Pao vs Connex E</td>
                     <td>27 October 2024</td>
                     <td>06:05 PM</td>
-                    <td><button class="preview-btn">Preview</button></td>
-                    <td>PSH North</td>
-                    <td>Court 1</td>
+                    <td>PSH North, Court 1</td>
                 </tr>
-                <tr>
-                    <td>
-                        <img src="home-logo.png" class="team-logo" alt="Deadeye"> Deadeye vs The Fundamentals 
-                        <img src="away-logo.png" class="team-logo" alt="The Fundamentals">
-                    </td>
-                    <td>27 October 2024</td>
-                    <td>07:05 PM</td>
-                    <td><button class="preview-btn">Preview</button></td>
-                    <td>PSH North</td>
-                    <td>Court 1</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="home-logo.png" class="team-logo" alt="BBL SHAKERS"> BBL SHAKERS vs The BusinessMen 
-                        <img src="away-logo.png" class="team-logo" alt="The BusinessMen">
-                    </td>
-                    <td>27 October 2024</td>
-                    <td>08:05 PM</td>
-                    <td><button class="preview-btn">Preview</button></td>
-                    <td>PSH North</td>
-                    <td>Court 1</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+                <!-- Add more games as needed -->
+            </table>
+        </div>
+
+        <!-- Add more weeks similarly -->
     </div>
 
     <footer>
         <p>&copy; 2024 London Basketball League. All rights reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript for toggling weeks
+        function showWeek(index) {
+            const weeks = document.getElementsByClassName('schedule-week');
+            for (let i = 0; i < weeks.length; i++) {
+                weeks[i].classList.remove('active');
+            }
+            weeks[index].classList.add('active');
+        }
+    </script>
 </body>
 </html>
