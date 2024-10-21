@@ -17,14 +17,18 @@
         }
         header {
             background: #4B0082;
-            padding: 20px;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
+        }
+        .header-logo {
+            height: 80px; /* Smaller logo size */
+            margin-right: 20px;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 0 auto;
+            margin: 0;
             text-align: center;
             flex: 1;
             background-color: #4B0082;
@@ -73,8 +77,6 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 2;
-            display: flex;
-            align-items: center;
             text-align: center;
         }
         .overlay-text {
@@ -82,12 +84,7 @@
             color: white;
             font-size: 4em;
             font-weight: bold;
-            margin-right: 15px;
             line-height: 1.2;
-        }
-        .overlay-logo {
-            height: 100px;
-            margin-left: 15px;
         }
         @keyframes fade {
             0% { opacity: 0; }
@@ -115,7 +112,6 @@
                 <li><a href="schedule.html">Schedule</a></li>
                 <li><a href="statistics.html">Standings</a></li>
                 <li><a href="players.html">Players</a></li>
-                <li><a href="gametape.html">Game Tape</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="notifications.html">Notifications</a></li>
                 <li><a href="analytics.html">Analytics</a></li>
@@ -125,16 +121,14 @@
 
     <div class="slideshow-container">
         <!-- Slideshow images -->
-        <div class="slide" style="background-image: url('Screen Shot 2024-10-19 at 2.05.09 AM.png'); display: block;"></div>
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010806.png');"></div>
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010747.png');"></div>
+        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010806.png'); display: block;"></div>
         <div class="slide" style="background-image: url('Screenshot 2024-10-19 010551.png');"></div>
         <div class="slide" style="background-image: url('Screenshot 2024-10-19 010539.png');"></div>
 
         <!-- Light black overlay -->
         <div class="black-overlay"></div>
 
-        <!-- Overlay text with logo -->
+        <!-- Overlay text -->
         <div class="overlay-content">
             <div class="overlay-text">The London Basketball League</div>
         </div>
