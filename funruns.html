@@ -10,7 +10,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #4B0082; /* Deep purple background */
+            background: #4B0082;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -22,7 +22,7 @@
             align-items: center;
         }
         .header-logo {
-            height: 80px; /* Adjusted logo size */
+            height: 80px;
             margin-right: 20px;
         }
         nav ul {
@@ -62,12 +62,12 @@
             background-size: cover;
             background-position: center;
         }
-        /* Specific adjustments for images 3 and 4 */
+        /* Specific adjustments for images 2 and 3 */
         .slide:nth-child(2) {
-            background-position: center 20%;
+            background-position: center 30%;
         }
         .slide:nth-child(3) {
-            background-position: center 20%;
+            background-position: center 30%;
         }
         .black-overlay {
             position: absolute;
@@ -75,7 +75,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Light black overlay */
+            background-color: rgba(0, 0, 0, 0.3); /* Lightened black overlay */
             z-index: 1;
         }
         .overlay-content {
@@ -93,11 +93,18 @@
             font-weight: bold;
             line-height: 1.2;
         }
-        @keyframes fade {
-            0% { opacity: 0; }
-            25% { opacity: 1; }
-            75% { opacity: 1; }
-            100% { opacity: 0; }
+        .sponsorship {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        .sponsorship a {
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
         }
         .description {
             text-align: center;
@@ -140,6 +147,12 @@
         <div class="overlay-content">
             <div class="overlay-text">The London Basketball League</div>
         </div>
+    </div>
+
+    <!-- Sponsorship section -->
+    <div class="sponsorship">
+        <p>LBL is officially sponsored by <a href="https://hottakesapp.com/" target="_blank">Hot Takes</a>.</p>
+        <img src="Sponsor.jpeg" alt="Hot Takes Logo" style="width: 200px; margin-top: 10px;">
     </div>
 
     <div class="description">
