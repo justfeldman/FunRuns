@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LBL - Home</title>
+    <!-- Link to Google Fonts for Anton -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -15,14 +17,9 @@
         }
         header {
             background: #4B0082;
-            padding: 10px 20px;
-            position: relative;
+            padding: 20px;
             display: flex;
             align-items: center;
-        }
-        .header-logo {
-            height: 80px; /* Increased logo size */
-            margin-right: 10px;
         }
         nav ul {
             list-style-type: none;
@@ -46,32 +43,14 @@
         nav ul li a:hover {
             color: #FFD700;
         }
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
+        .title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 60vh;
-            margin: auto;
-            overflow: hidden;
-            border: 5px solid black; /* Black frame around the slideshow */
-        }
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+            background: url('background-image.jpg') no-repeat center center;
             background-size: cover;
-            background-position: center; /* Default positioning */
-            opacity: 0;
-            transition: opacity 1s;
-        }
-        /* Specific positioning adjustments */
-        .slide1 {
-            background-position: center; /* Reset to center */
-        }
-        .slide2 {
-            background-position: top /* Drastically move up */
-        }
-        .slide3 {
-            background-position: top; /* Keep as is */
+            position: relative;
         }
         .black-overlay {
             position: absolute;
@@ -79,35 +58,25 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Darker black overlay */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
             z-index: 1;
         }
-        .overlay-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .title-text {
+            font-family: 'Anton', sans-serif;
+            font-size: 4em;
+            color: white;
             z-index: 2;
             text-align: center;
-        }
-        .overlay-text {
-            color: white;
-            font-size: 3em;
-            font-weight: bold;
             line-height: 1.2;
+            letter-spacing: 2px;
+            margin: 0;
         }
-        @keyframes fade {
-            0% { opacity: 0; }
-            25% { opacity: 1; }
-            75% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-        .description {
-            text-align: center;
+        footer {
+            background: #3c3c3c;
             color: white;
-            font-size: 1.5em;
-            padding: 40px;
-            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -122,50 +91,21 @@
                 <li><a href="schedule.html">Schedule</a></li>
                 <li><a href="statistics.html">Standings</a></li>
                 <li><a href="players.html">Players</a></li>
+                <li><a href="gametape.html">Game Tape</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="notifications.html">Notifications</a></li>
-                <li><a href="analytics.html">Statistics</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="slideshow-container">
-        <!-- Slideshow images -->
-        <div class="slide slide1" style="background-image: url('Screenshot 2024-10-19 010806.png'); opacity: 1;"></div>
-        <div class="slide slide2" style="background-image: url('Screenshot 2024-10-19 010551.png');"></div>
-        <div class="slide slide3" style="background-image: url('Screenshot 2024-10-19 010539.png');"></div>
-
-        <!-- Darker black overlay -->
+    <div class="title-container">
         <div class="black-overlay"></div>
-
-        <!-- Overlay text -->
-        <div class="overlay-content">
-            <div class="overlay-text">The London<br>Basketball League</div>
-        </div>
-    </div>
-
-    <div class="description">
-        <p>Join the local community league and experience competitive basketball, skilled athletes, and a strong sense of camaraderie. Register today and be part of the London Basketball League!</p>
+        <h1 class="title-text">The London Basketball League</h1>
     </div>
 
     <footer>
         <p>&copy; 2024 London Basketball League. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Slideshow functionality
-        let slides = document.getElementsByClassName('slide');
-        let currentIndex = 0;
-        slides[currentIndex].style.opacity = 1; // Show the first slide immediately
-
-        function nextSlide() {
-            slides[currentIndex].style.opacity = 0; // Fade out the current slide
-            currentIndex = (currentIndex + 1) % slides.length;
-            slides[currentIndex].style.opacity = 1; // Fade in the next slide
-        }
-
-        // Change slides every 2 seconds
-        setInterval(nextSlide, 2000);
-    </script>
 </body>
 </html>
