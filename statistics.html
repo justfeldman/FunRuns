@@ -4,29 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LBL - Standings</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Link to Google Fonts for Anton -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
-            color: #f4f4f4;
+            font-family: 'Anton', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #1a1a1a; /* Dark background for a better aesthetic */
         }
         header {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            text-align: center;
+            background: #4B0082; /* Deep purple background */
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
         }
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            color: #ffd700;
-            text-shadow: 2px 2px #000;
+        .header-logo {
+            height: 80px;
+            margin-right: 20px;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
+            flex: 1;
             text-align: center;
         }
         nav ul li {
@@ -34,65 +35,75 @@
             margin: 0 15px;
         }
         nav ul li a {
-            color: #ffd700;
+            color: white;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.2em;
             transition: color 0.3s;
         }
         nav ul li a:hover {
-            color: #f4f4f4;
+            color: #FFD700;
         }
         .standings-container {
-            padding: 50px;
-            margin: 0 auto;
-            width: 80%;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
+            background-color: #333;
+            border-radius: 10px;
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 900px;
+            color: white;
             text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
-        .standings-container h2 {
-            color: #ffd700;
-            font-size: 2.5em;
+        .standings-header {
+            background-color: #4B0082; /* Deep purple background */
+            color: white;
+            padding: 10px;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            border-radius: 5px;
         }
-        .conference-standings {
+        .conference {
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
         }
-        .conference {
-            width: 45%;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .conference h3 {
-            text-align: center;
-            color: #ffd700;
-        }
-        .team-standing {
-            background: rgba(255, 255, 255, 0.1);
+        .conference-box {
+            width: 48%;
+            background-color: #1a1a1a;
             padding: 10px;
-            margin: 5px 0;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            border-radius: 5px;
         }
-        .team-standing span {
+        .conference-box h2 {
+            background-color: #4B0082;
+            padding: 10px;
+            font-size: 1.5em;
+            margin: 0;
+            border-radius: 5px 5px 0 0;
+        }
+        .team-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .team-list li {
+            background-color: #444;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
             font-size: 1.2em;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>LBL - Standings</h1>
+        <img src="Screen Shot 2024-10-19 at 2.05.09 AM.png" alt="LBL Logo" class="header-logo">
         <nav>
             <ul>
                 <li><a href="funruns.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="teams.html">Teams</a></li>
                 <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="statistics.html">Standings</a></li> <!-- Updated label -->
+                <li><a href="statistics.html">Standings</a></li>
                 <li><a href="players.html">Players</a></li>
                 <li><a href="gametape.html">Game Tape</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -103,71 +114,37 @@
     </header>
 
     <div class="standings-container">
-        <h2>Standings</h2>
+        <div class="standings-header">Standings</div>
         <p>Current standings for the 2024 season.</p>
 
-        <!-- Standings for Eastern and Western Conference with 6 teams each -->
-        <div class="conference-standings">
-            <div class="conference" id="easternConference">
-                <h3>Eastern Conference</h3>
-                <div class="team-standing">
-                    <span>1</span>
-                    <span>The Dunk Masters - Wins: 10, Losses: 2</span>
-                </div>
-                <div class="team-standing">
-                    <span>2</span>
-                    <span>Fast Breakers - Wins: 8, Losses: 4</span>
-                </div>
-                <div class="team-standing">
-                    <span>3</span>
-                    <span>Hoop Heroes - Wins: 7, Losses: 5</span>
-                </div>
-                <div class="team-standing">
-                    <span>4</span>
-                    <span>Net Ninjas - Wins: 6, Losses: 6</span>
-                </div>
-                <div class="team-standing">
-                    <span>5</span>
-                    <span>Alley-Oop Squad - Wins: 5, Losses: 7</span>
-                </div>
-                <div class="team-standing">
-                    <span>6</span>
-                    <span>Rim Rockers - Wins: 4, Losses: 8</span>
-                </div>
+        <div class="conference">
+            <div class="conference-box">
+                <h2>Eastern Conference</h2>
+                <ul class="team-list">
+                    <li>1. The Dunk Masters - Wins: 10, Losses: 2</li>
+                    <li>2. Fast Breakers - Wins: 8, Losses: 4</li>
+                    <li>3. Hoop Heroes - Wins: 7, Losses: 5</li>
+                    <li>4. Net Ninjas - Wins: 6, Losses: 6</li>
+                    <li>5. Alley-Oop Squad - Wins: 5, Losses: 7</li>
+                    <li>6. Rim Rockers - Wins: 4, Losses: 8</li>
+                </ul>
             </div>
-
-            <div class="conference" id="westernConference">
-                <h3>Western Conference</h3>
-                <div class="team-standing">
-                    <span>1</span>
-                    <span>Court Kings - Wins: 9, Losses: 3</span>
-                </div>
-                <div class="team-standing">
-                    <span>2</span>
-                    <span>Basket Brawlers - Wins: 8, Losses: 4</span>
-                </div>
-                <div class="team-standing">
-                    <span>3</span>
-                    <span>Dribble Demons - Wins: 7, Losses: 5</span>
-                </div>
-                <div class="team-standing">
-                    <span>4</span>
-                    <span>Shot Swishers - Wins: 6, Losses: 6</span>
-                </div>
-                <div class="team-standing">
-                    <span>5</span>
-                    <span>Block Busters - Wins: 5, Losses: 7</span>
-                </div>
-                <div class="team-standing">
-                    <span>6</span>
-                    <span>Rebound Rulers - Wins: 4, Losses: 8</span>
-                </div>
+            <div class="conference-box">
+                <h2>Western Conference</h2>
+                <ul class="team-list">
+                    <li>1. Court Kings - Wins: 9, Losses: 3</li>
+                    <li>2. Basket Brawlers - Wins: 8, Losses: 4</li>
+                    <li>3. Dribble Demons - Wins: 7, Losses: 5</li>
+                    <li>4. Shot Swishers - Wins: 6, Losses: 6</li>
+                    <li>5. Block Busters - Wins: 5, Losses: 7</li>
+                    <li>6. Rebound Rulers - Wins: 4, Losses: 8</li>
+                </ul>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 London Basketball League. All rights reserved.</p>
+        <p style="color: white; text-align: center; padding: 20px;">&copy; 2024 London Basketball League. All rights reserved.</p>
     </footer>
 </body>
 </html>
