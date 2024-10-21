@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #4B0082; /* Deep purple background */
+            background: linear-gradient(to bottom, #000000, #333333); /* Black gradient background */
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -47,7 +47,7 @@
         }
         .schedule-container {
             max-width: 90%;
-            margin: 30px auto;
+            margin: 50px auto;
             padding: 20px;
             background-color: white;
             border: 5px solid #3c3c3c; /* Dark gray border */
@@ -56,13 +56,13 @@
         }
         .week-toggle {
             position: absolute;
-            top: 10px;
+            top: -25px;
             left: 10px;
             background-color: #4B0082;
             color: white;
-            padding: 5px 10px;
+            padding: 5px 15px;
             border: none;
-            font-size: 0.9em;
+            font-size: 1em;
             cursor: pointer;
             border-radius: 5px;
         }
@@ -99,6 +99,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
         }
         .preview-button:hover {
             background-color: #4B0082;
@@ -146,7 +147,7 @@
         <!-- Purple header bar -->
         <div class="header-bar">Fall '24</div>
 
-        <!-- Schedule content for each week -->
+        <!-- Combined schedule content -->
         <div class="schedule-week active" id="week-0">
             <table>
                 <tr>
@@ -161,7 +162,7 @@
                     <td>BBL Shakers vs Connex E</td>
                     <td>20 October 2024</td>
                     <td>06:05 PM</td>
-                    <td><button class="preview-button">Preview</button></td>
+                    <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
                     <td>PSH North</td>
                     <td>Court 1</td>
                 </tr>
@@ -169,7 +170,15 @@
                     <td>Deadeye vs Kung Pao</td>
                     <td>20 October 2024</td>
                     <td>07:05 PM</td>
-                    <td><button class="preview-button">Preview</button></td>
+                    <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
+                    <td>PSH North</td>
+                    <td>Court 1</td>
+                </tr>
+                <tr>
+                    <td>The BusinessMen vs The Fundamentals</td>
+                    <td>27 October 2024</td>
+                    <td>08:05 PM</td>
+                    <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
                     <td>PSH North</td>
                     <td>Court 1</td>
                 </tr>
@@ -178,28 +187,6 @@
         </div>
         
         <!-- Additional weeks' schedules go here -->
-        <div class="schedule-week" id="week-1">
-            <table>
-                <tr>
-                    <th>Home vs Away</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Watch Live</th>
-                    <th>Facility</th>
-                    <th>Court</th>
-                </tr>
-                <tr>
-                    <td>The BusinessMen vs The Fundamentals</td>
-                    <td>27 October 2024</td>
-                    <td>08:05 PM</td>
-                    <td><button class="preview-button">Preview</button></td>
-                    <td>PSH North</td>
-                    <td>Court 1</td>
-                </tr>
-                <!-- Add more games for Week 2 -->
-            </table>
-        </div>
-        <!-- More weeks here... -->
     </div>
 
     <footer>
