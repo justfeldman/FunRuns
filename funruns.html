@@ -10,7 +10,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #4B0082;
+            background: #1E1E1E; /* Darker black background */
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -53,6 +53,7 @@
             height: 60vh;
             margin: auto;
             overflow: hidden;
+            border: 5px solid #000; /* Black frame around the slideshow */
         }
         .slide {
             display: none;
@@ -62,12 +63,11 @@
             background-size: cover;
             background-position: center;
         }
-        /* Specific adjustments for images 2 and 3 */
         .slide:nth-child(2) {
-            background-position: center 30%;
+            background-position: center 35%; /* Move image 2 down */
         }
         .slide:nth-child(3) {
-            background-position: center 30%;
+            background-position: center 35%; /* Move image 3 down */
         }
         .black-overlay {
             position: absolute;
@@ -75,7 +75,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.3); /* Lightened black overlay */
+            background-color: rgba(0, 0, 0, 0.3); /* Slightly lighter black overlay */
             z-index: 1;
         }
         .overlay-content {
@@ -93,18 +93,21 @@
             font-weight: bold;
             line-height: 1.2;
         }
-        .sponsorship {
-            text-align: center;
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #333;
-            color: white;
+        @keyframes fade {
+            0% { opacity: 0; }
+            25% { opacity: 1; }
+            75% { opacity: 1; }
+            100% { opacity: 0; }
         }
-        .sponsorship a {
-            color: #FFD700;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
+        .sponsor-section {
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .sponsor-logo {
+            height: 80px;
+            margin-top: 10px;
         }
         .description {
             text-align: center;
@@ -149,10 +152,11 @@
         </div>
     </div>
 
-    <!-- Sponsorship section -->
-    <div class="sponsorship">
-        <p>LBL is officially sponsored by <a href="https://hottakesapp.com/" target="_blank">Hot Takes</a>.</p>
-        <img src="Sponsor.jpeg" alt="Hot Takes Logo" style="width: 200px; margin-top: 10px;">
+    <div class="sponsor-section">
+        <p>LBL is officially sponsored by:</p>
+        <a href="https://hottakesapp.com/" target="_blank">
+            <img src="Sponsor.jpeg" alt="Hot Takes Sponsor" class="sponsor-logo">
+        </a>
     </div>
 
     <div class="description">
