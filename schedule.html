@@ -8,10 +8,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #000000, #333333); /* Black gradient background */
+            background-color: #1c1c1c; /* Consistent dark gray background */
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         header {
             background: #4B0082;
@@ -105,6 +108,13 @@
             background-color: #4B0082;
             color: white;
         }
+        .bottom-image {
+            margin-top: auto; /* Pushes the image to the bottom of the page */
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            opacity: 0.8; /* Slight transparency for aesthetic */
+        }
     </style>
 </head>
 <body>
@@ -188,6 +198,9 @@
         
         <!-- Additional weeks' schedules go here -->
     </div>
+
+    <!-- Bottom background image -->
+    <img src="VeniceBeach.jpg" alt="Venice Beach Basketball Court" class="bottom-image">
 
     <footer>
         <p>&copy; 2024 London Basketball League. All rights reserved.</p>
