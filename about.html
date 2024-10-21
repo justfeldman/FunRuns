@@ -3,73 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LBL - About Us</title>
+    <title>LBL - About</title>
+    <!-- Link to Google Fonts for Anton -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
-            color: #f4f4f4;
+            font-family: 'Anton', sans-serif;
+            background-color: #1c1c1c; /* Consistent dark gray background */
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         header {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            text-align: center;
+            background: #4B0082;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
         }
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            color: #ffd700;
-            text-shadow: 2px 2px #000;
+        .header-logo {
+            height: 80px;
+            margin-right: 10px;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
+            margin: 0 auto;
             text-align: center;
+            flex: 1;
+            background-color: #4B0082;
         }
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
         nav ul li a {
-            color: #ffd700;
+            color: white;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.2em;
             transition: color 0.3s;
         }
         nav ul li a:hover {
-            color: #f4f4f4;
+            color: #FFD700;
         }
         .about-container {
-            padding: 50px;
-            margin: 0 auto;
-            width: 80%;
+            max-width: 90%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border: 5px solid #3c3c3c;
+            border-radius: 10px;
+            color: black;
+        }
+        .section-title {
+            font-size: 2em;
             text-align: center;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
+            color: #4B0082;
+            margin-bottom: 20px;
         }
-        .about-container h2 {
-            color: #ffd700;
-            font-size: 2.5em;
+        .team-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 40px;
         }
-        .about-container p {
+        .team-member {
+            text-align: center;
+            margin: 10px;
+        }
+        .team-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid #4B0082;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .team-name {
             font-size: 1.2em;
-            line-height: 1.6;
+            color: #4B0082;
+            margin-bottom: 5px;
+        }
+        .team-role {
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .about-league {
+            margin-top: 50px;
+        }
+        .about-text {
+            font-size: 1.2em;
+            color: black;
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>LBL - About Us</h1>
+        <img src="Screen Shot 2024-10-19 at 2.05.09 AM.png" alt="LBL Logo" class="header-logo">
         <nav>
             <ul>
-                <li><a href="funruns.html">Home</a></li> <!-- Link to Home -->
+                <li><a href="funruns.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="teams.html">Teams</a></li>
                 <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="statistics.html">Stats</a></li>
+                <li><a href="statistics.html">Standings</a></li>
                 <li><a href="players.html">Players</a></li>
+                <li><a href="gametape.html">Game Tape</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="notifications.html">Notifications</a></li>
                 <li><a href="analytics.html">Analytics</a></li>
@@ -78,13 +121,46 @@
     </header>
 
     <div class="about-container">
-        <h2>About Us</h2>
-        <p>We are a community-driven platform for basketball lovers to easily manage leagues, track stats, set up schedules, and stay connected. Whether you're managing a casual league or a competitive one, we've got you covered.</p>
+        <!-- About the Team Section -->
+        <h2 class="section-title">Meet the Team</h2>
+        <div class="team-section">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img src="person1.jpg" alt="Team Member 1" class="team-photo">
+                <div class="team-name">John Doe</div>
+                <div class="team-role">League Founder</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae.</p>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="person2.jpg" alt="Team Member 2" class="team-photo">
+                <div class="team-name">Jane Smith</div>
+                <div class="team-role">Head Coach</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae.</p>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="person3.jpg" alt="Team Member 3" class="team-photo">
+                <div class="team-name">Mike Johnson</div>
+                <div class="team-role">Assistant Coach</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae.</p>
+            </div>
+        </div>
+
+        <!-- About the League Section -->
+        <div class="about-league">
+            <h2 class="section-title">About Our League</h2>
+            <p class="about-text">
+                The London Basketball League (LBL) is more than just a basketball league; it's a community-driven initiative 
+                aimed at fostering local talent, providing a platform for competitive play, and promoting teamwork and sportsmanship 
+                in London. Whether you're a seasoned player or just getting started, LBL offers a place for everyone to enjoy the game 
+                and build lasting connections.
+            </p>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 London Basketball League. All rights reserved.</p>
+        <p style="color: white; text-align: center; padding: 20px;">&copy; 2024 London Basketball League. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
