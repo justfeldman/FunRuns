@@ -62,10 +62,11 @@
             width: 80%;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
         }
 
         .jersey {
-            width: 120px;
+            width: 150px; /* Increased size */
             height: auto;
             transition: transform 0.3s;
         }
@@ -75,12 +76,16 @@
         }
 
         .center-content {
-            margin-top: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
+            z-index: 1;
         }
 
         .lbl-logo {
-            width: 100px;
+            width: 120px; /* Slightly larger logo */
             height: auto;
             margin-bottom: 10px;
         }
@@ -111,7 +116,7 @@
 
     <!-- Main Content -->
     <div class="roster-container">
-        <!-- Jerseys in Grid Circular Layout -->
+        <!-- Jerseys in Grid Layout -->
         <div class="jersey-grid">
             <img src="Barcelone.png" alt="Barcelona Jersey" class="jersey">
             <img src="Pacers.png" alt="Pacers Jersey" class="jersey">
@@ -121,6 +126,13 @@
             <img src="RipCity.png" alt="Rip City Jersey" class="jersey">
             <img src="Suns.png" alt="Suns Jersey" class="jersey">
             <img src="Celtics.png" alt="Celtics Jersey" class="jersey">
+            
+            <!-- LBL Logo and Tagline between rows -->
+            <div class="center-content">
+                <img src="Screen Shot 2024-10-23 at 4.42.44 PM.png" alt="LBL Logo" class="lbl-logo">
+                <p class="tagline">The Ball League For Washed Up Beauties.</p>
+            </div>
+
             <img src="JackieMoon.png" alt="Jackie Moon Jersey" class="jersey">
             <img src="RedeemTeam.png" alt="Redeem Team Jersey" class="jersey">
             <img src="OtherAllStars.png" alt="Other All Stars Jersey" class="jersey">
@@ -133,12 +145,6 @@
             <img src="Pelicans.png" alt="Pelicans Jersey" class="jersey">
             <img src="Raptors.png" alt="Raptors Jersey" class="jersey">
             <img src="Wolves.png" alt="Wolves Jersey" class="jersey">
-        </div>
-
-        <!-- LBL Logo and Tagline -->
-        <div class="center-content">
-            <img src="Screen Shot 2024-10-23 at 4.42.44 PM.png" alt="LBL Logo" class="lbl-logo">
-            <p class="tagline">The Ball League For Washed Up Beauties</p>
         </div>
     </div>
 </body>
