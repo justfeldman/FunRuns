@@ -6,41 +6,35 @@
     <title>LBL - Rosters</title>
     <!-- Link to Google Fonts for Anton -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Anton', sans-serif;
-            background: #1E1E1E; /* Darker background */
+            background: #1E1E1E; /* Darker black background */
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
         header {
             background: #4B0082;
             padding: 10px 20px;
             display: flex;
             align-items: center;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            z-index: 10;
         }
         .header-logo {
-            height: 60px;
+            height: 80px;
             margin-right: 20px;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            display: flex;
-            justify-content: center;
+            text-align: center;
             flex: 1;
+            background-color: #4B0082;
         }
         nav ul li {
+            display: inline;
             margin: 0 15px;
         }
         nav ul li a {
@@ -53,64 +47,62 @@
         nav ul li a:hover {
             color: #FFD700;
         }
+
         .roster-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            position: relative;
-            width: 100%;
-            height: 100%;
-            margin-top: 80px;
-        }
-        .jersey-circle {
-            position: relative;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
             align-items: center;
+            margin-top: 30px;
         }
+
+        .jersey-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
         .jersey {
-            width: 80px;
+            width: 110px; /* Reduced size */
             height: auto;
-            position: absolute;
-            cursor: pointer;
-            transition: transform 0.3s, filter 0.3s;
+            transition: transform 0.3s;
         }
+
         .jersey:hover {
-            transform: scale(1.2);
-            filter: brightness(1.2);
+            transform: scale(1.1);
         }
-        .jersey:nth-child(1) { top: 20%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg); }
-        .jersey:nth-child(2) { top: 35%; left: 70%; transform: translate(-50%, -50%) rotate(10deg); }
-        .jersey:nth-child(3) { top: 50%; left: 85%; transform: translate(-50%, -50%) rotate(-10deg); }
-        .jersey:nth-child(4) { top: 65%; left: 70%; transform: translate(-50%, -50%) rotate(15deg); }
-        .jersey:nth-child(5) { top: 80%; left: 50%; transform: translate(-50%, -50%) rotate(-10deg); }
-        .jersey:nth-child(6) { top: 65%; left: 30%; transform: translate(-50%, -50%) rotate(5deg); }
-        .jersey:nth-child(7) { top: 50%; left: 15%; transform: translate(-50%, -50%) rotate(-5deg); }
-        .jersey:nth-child(8) { top: 35%; left: 30%; transform: translate(-50%, -50%) rotate(10deg); }
-        /* Add more nth-child positions for remaining jerseys... */
-        
-        .center-logo {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: url('Screen Shot 2024-10-23 at 4.42.44 PM.png') no-repeat center;
-            background-size: cover;
-            border-radius: 50%;
-            z-index: 2;
+
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
         }
+
+        .lbl-logo {
+            width: 120px; /* Slightly larger logo */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
         .tagline {
-            position: absolute;
-            top: 70%;
-            color: #FFFFFF;
-            font-size: 1.5em;
-            z-index: 2;
-            text-align: center;
-            width: 100%;
+            font-size: 22px;
+            color: #fff;
+        }
+
+        .grid-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .grid-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
     </style>
 </head>
@@ -132,35 +124,51 @@
         </nav>
     </header>
 
-    <!-- Main Roster Section -->
+    <!-- Main Content -->
     <div class="roster-container">
-        <!-- Circular Layout -->
-        <div class="jersey-circle">
-            <a href="schrieders_shooters.html"><img src="RedeemTeam.png" alt="Redeem Team Jersey" class="jersey"></a>
-            <img src="Barcelone.png" alt="Barcelona Jersey" class="jersey">
-            <img src="Pacers.png" alt="Pacers Jersey" class="jersey">
-            <img src="Kentucky.png" alt="Kentucky Jersey" class="jersey">
-            <img src="Kings.png" alt="Kings Jersey" class="jersey">
-            <img src="Orange.png" alt="Orange Jersey" class="jersey">
-            <img src="RipCity.png" alt="Rip City Jersey" class="jersey">
-            <img src="Suns.png" alt="Suns Jersey" class="jersey">
-            <img src="Celtics.png" alt="Celtics Jersey" class="jersey">
-            <img src="JackieMoon.png" alt="Jackie Moon Jersey" class="jersey">
-            <img src="OtherAllStars.png" alt="Other All Stars Jersey" class="jersey">
-            <img src="Idek.png" alt="IDK Jersey" class="jersey">
-            <img src="All Stars.png" alt="All Stars Jersey" class="jersey">
-            <img src="Hawks.png" alt="Hawks Jersey" class="jersey">
-            <img src="Nets.png" alt="Nets Jersey" class="jersey">
-            <img src="Oregon.png" alt="Oregon Jersey" class="jersey">
-            <img src="Vice.png" alt="Vice Jersey" class="jersey">
-            <img src="Pelicans.png" alt="Pelicans Jersey" class="jersey">
-            <img src="Raptors.png" alt="Raptors Jersey" class="jersey">
-            <img src="Wolves.png" alt="Wolves Jersey" class="jersey">
-        </div>
+        <!-- Jerseys in Grid Circular Layout -->
+        <div class="grid-wrapper">
+            <!-- Jerseys Above the Logo -->
+            <div class="grid-row">
+                <img src="Barcelone.png" alt="Barcelona Jersey" class="jersey">
+                <img src="Pacers.png" alt="Pacers Jersey" class="jersey">
+                <img src="Kentucky.png" alt="Kentucky Jersey" class="jersey">
+                <img src="Kings.png" alt="Kings Jersey" class="jersey">
+                <img src="Orange.png" alt="Orange Jersey" class="jersey">
+            </div>
+            <div class="grid-row">
+                <img src="RipCity.png" alt="Rip City Jersey" class="jersey">
+                <img src="Suns.png" alt="Suns Jersey" class="jersey">
+                <img src="Celtics.png" alt="Celtics Jersey" class="jersey">
+                <img src="JackieMoon.png" alt="Jackie Moon Jersey" class="jersey">
+                <!-- Link to Schrieders Shooters Page -->
+                <a href="schriedershooters.html">
+                    <img src="RedeemTeam.png" alt="Redeem Team Jersey" class="jersey">
+                </a>
+            </div>
 
-        <!-- Center Logo and Tagline -->
-        <div class="center-logo"></div>
-        <p class="tagline">The Ball League For Washed Up Beauties.</p>
+            <!-- LBL Logo and Tagline -->
+            <div class="center-content">
+                <img src="Screen Shot 2024-10-23 at 4.42.44 PM.png" alt="LBL Logo" class="lbl-logo">
+                <p class="tagline">The Ball League For Washed Up Beauties</p>
+            </div>
+
+            <!-- Jerseys Below the Logo -->
+            <div class="grid-row">
+                <img src="OtherAllStars.png" alt="Other All Stars Jersey" class="jersey">
+                <img src="Idek.png" alt="IDK Jersey" class="jersey">
+                <img src="All Stars.png" alt="All Stars Jersey" class="jersey">
+                <img src="Hawks.png" alt="Hawks Jersey" class="jersey">
+                <img src="Nets.png" alt="Nets Jersey" class="jersey">
+            </div>
+            <div class="grid-row">
+                <img src="Oregon.png" alt="Oregon Jersey" class="jersey">
+                <img src="Vice.png" alt="Vice Jersey" class="jersey">
+                <img src="Pelicans.png" alt="Pelicans Jersey" class="jersey">
+                <img src="Raptors.png" alt="Raptors Jersey" class="jersey">
+                <img src="Wolves.png" alt="Wolves Jersey" class="jersey">
+            </div>
+        </div>
     </div>
 </body>
 </html>
