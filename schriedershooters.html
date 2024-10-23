@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schreider's Shooters</title>
+    <!-- Link to Google Fonts for Anton -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+    <style>
+        body {
+            font-family: 'Anton', sans-serif;
+            background: #282828; /* Dark background to match 2K aesthetic */
+            color: #FFD700; /* Golden text color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            width: 100%;
+            background: #800000; /* Maroon color inspired by the jersey */
+            color: #FFD700;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2.5em;
+        }
+
+        .team-record {
+            margin: 20px;
+            font-size: 1.5em;
+            color: white;
+            text-align: center;
+        }
+
+        .roster-table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #444;
+            color: white;
+        }
+
+        .roster-table th, .roster-table td {
+            border: 2px solid #FFD700; /* Golden borders */
+            padding: 10px;
+            text-align: center;
+        }
+
+        .roster-table th {
+            background: #800000; /* Maroon header */
+            color: #FFD700;
+            font-size: 1.2em;
+        }
+
+        .back-button {
+            margin: 30px;
+            padding: 10px 20px;
+            background: #800000;
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 1.2em;
+            border: 2px solid #FFD700;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #FFD700;
+            color: #800000;
+        }
+
+        .player-stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #333; /* Dark background for 2K vibe */
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid #FFD700;
+            margin: 10px;
+            width: 80%;
+        }
+
+        .player-img {
+            width: 80px;
+            height: 80px;
+            background: url('Screen Shot 2024-10-23 at 5.24.34 PM.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .player-info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .player-name {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .player-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Team Header -->
+    <div class="header">
+        Schreider's Shooters
+    </div>
+
+    <!-- Team Record -->
+    <div class="team-record">
+        Team Record: 0-0
+    </div>
+
+    <!-- Player Roster Table -->
+    <table class="roster-table">
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>PPG</th>
+            <th>RPG</th>
+            <th>APG</th>
+            <th>SPG</th>
+            <th>BPG</th>
+        </tr>
+        <tr>
+            <td>Brandon Snider</td>
+            <td>SF</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Leo Benoliel</td>
+            <td>PF</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Josh Gelman</td>
+            <td>C</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Jacob Furman</td>
+            <td>G</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Jason Hock</td>
+            <td>C</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Max Mandel</td>
+            <td>G</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Jacob Schreider</td>
+            <td>G</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Justin Feldman</td>
+            <td>G</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+    </table>
+
+    <!-- Back Button -->
+    <a href="rosters.html" class="back-button">Back to Rosters</a>
+</body>
+</html>
