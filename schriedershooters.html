@@ -9,8 +9,8 @@
     <style>
         body {
             font-family: 'Anton', sans-serif;
-            background: #282828; /* Dark background to match 2K aesthetic */
-            color: #FFD700; /* Golden text color */
+            background: linear-gradient(135deg, #00274D, #BA0C2F); /* Blue to Red gradient */
+            color: #FFF;
             margin: 0;
             padding: 0;
             display: flex;
@@ -20,64 +20,93 @@
 
         .header {
             width: 100%;
-            background: #800000; /* Maroon color inspired by the jersey */
-            color: #FFD700;
+            background: #00274D; /* Dark blue for header */
+            color: #FFFFFF;
             padding: 20px 0;
             text-align: center;
             font-size: 2.5em;
+            text-shadow: 2px 2px 5px #000;
+            border-bottom: 5px solid #BA0C2F; /* Red bottom border */
+        }
+
+        .jersey-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay behind jersey */
+            border: 5px solid #FFF; /* White border around jersey */
+            box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .jersey-img {
+            height: 250px;
+            margin: 0 15px;
+            border-radius: 10px;
         }
 
         .team-record {
             margin: 20px;
             font-size: 1.5em;
-            color: white;
+            color: #FFD700; /* Gold color for record */
             text-align: center;
+            text-shadow: 1px 1px 2px #000;
         }
 
         .roster-table {
-            width: 80%;
+            width: 90%;
             margin: 20px auto;
             border-collapse: collapse;
-            background: #444;
-            color: white;
+            background: rgba(0, 0, 0, 0.8); /* Dark background for table */
+            color: #FFF;
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
         }
 
         .roster-table th, .roster-table td {
-            border: 2px solid #FFD700; /* Golden borders */
-            padding: 10px;
+            border: 2px solid #FFF; /* White borders */
+            padding: 15px;
             text-align: center;
+            font-size: 1.2em;
         }
 
         .roster-table th {
-            background: #800000; /* Maroon header */
-            color: #FFD700;
-            font-size: 1.2em;
+            background: #BA0C2F; /* Red for header */
+            color: #FFF;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .roster-table tr:hover {
+            background: rgba(255, 255, 255, 0.1); /* Light hover effect */
         }
 
         .back-button {
             margin: 30px;
-            padding: 10px 20px;
-            background: #800000;
-            color: #FFD700;
+            padding: 15px 30px;
+            background: #FFF;
+            color: #BA0C2F; /* Red text */
             text-decoration: none;
             font-size: 1.2em;
-            border: 2px solid #FFD700;
+            border: 2px solid #BA0C2F; /* Red border */
             transition: 0.3s;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .back-button:hover {
-            background: #FFD700;
-            color: #800000;
+            background: #BA0C2F; /* Red hover */
+            color: #FFF;
+            border-color: #FFF;
         }
 
         .player-stats {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #333; /* Dark background for 2K vibe */
+            background: rgba(0, 0, 0, 0.7); /* Darker background */
             color: white;
             padding: 10px 20px;
-            border: 2px solid #FFD700;
+            border: 2px solid #FFF;
             margin: 10px;
             width: 80%;
         }
@@ -89,6 +118,7 @@
             background-size: cover;
             border-radius: 50%;
             margin-right: 20px;
+            border: 2px solid #FFF;
         }
 
         .player-info {
@@ -113,6 +143,11 @@
     <!-- Team Header -->
     <div class="header">
         Schreider's Shooters
+    </div>
+
+    <!-- Team Jersey Display -->
+    <div class="jersey-container">
+        <img src="RedeemTeam.png" alt="Schreider's Shooters Jersey" class="jersey-img">
     </div>
 
     <!-- Team Record -->
