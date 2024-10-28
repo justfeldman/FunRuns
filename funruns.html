@@ -69,7 +69,7 @@
             opacity: 1;
             z-index: 1;
         }
-        /* Move images 5 and 6 down significantly */
+        /* Adjust positioning for slides 5 and 6 */
         .slide:nth-child(5), .slide:nth-child(6) {
             background-position: center 10%;
         }
@@ -85,10 +85,10 @@
         .overlay-content {
             position: absolute;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            left: 20%;
+            transform: translate(-20%, -50%);
             z-index: 2;
-            text-align: center;
+            text-align: left;
         }
         .overlay-text {
             font-family: 'Anton', sans-serif;
@@ -96,6 +96,7 @@
             font-size: 4em;
             font-weight: bold;
             line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Added text shadow for better visibility */
         }
         .sponsor-section {
             background-color: #000;
