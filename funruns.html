@@ -88,14 +88,17 @@
         .overlay-content {
             position: absolute;
             top: 50%;
-            left: 20%;
-            transform: translate(-20%, -50%);
+            left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 2;
-            text-align: left;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 10px;
+            border-radius: 10px;
         }
         .overlay-text {
             font-family: 'Anton', sans-serif;
-            color: white;
+            color: rgba(255, 255, 255, 0.9); /* Slightly less transparent */
             font-size: 4em;
             font-weight: bold;
             line-height: 1.2;
@@ -194,4 +197,5 @@
     </script>
 </body>
 </html>
+
 
