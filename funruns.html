@@ -62,13 +62,12 @@
             height: 100%;
             background-size: cover;
             background-position: center;
+            transition: opacity 1s ease; /* Smooth transition */
+            opacity: 0;
         }
-        /* Specific adjustments for images 2 and 3 to move them down further */
-        .slide:nth-child(2) {
-            background-position: center 10%; /* Move image 2 down more */
-        }
-        .slide:nth-child(3) {
-            background-position: center 10%; /* Move image 3 down more */
+        .slide.active {
+            display: block;
+            opacity: 1;
         }
         .black-overlay {
             position: absolute;
@@ -130,8 +129,12 @@
     </header>
 
     <div class="slideshow-container">
-        <!-- Slideshow images -->
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010806.png'); display: block;"></div>
+        <!-- Updated Slideshow images -->
+        <div class="slide active" style="background-image: url('Screen Shot 2024-10-28 at 2.45.03 PM.png');"></div>
+        <div class="slide" style="background-image: url('Screen Shot 2024-10-28 at 2.53.44 PM.png');"></div>
+        <div class="slide" style="background-image: url('Screen Shot 2024-10-28 at 3.11.17 PM.png');"></div>
+        <div class="slide" style="background-image: url('Screen Shot 2024-10-28 at 2.58.14 PM.png');"></div>
+        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010806.png');"></div>
         <div class="slide" style="background-image: url('Screenshot 2024-10-19 010551.png');"></div>
         <div class="slide" style="background-image: url('Screenshot 2024-10-19 010539.png');"></div>
 
@@ -161,10 +164,12 @@
         let currentIndex = 0;
 
         function showSlide(index) {
+            // Remove 'active' class from all slides
             for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = 'none';
+                slides[i].classList.remove('active');
             }
-            slides[index].style.display = 'block';
+            // Add 'active' class to the current slide
+            slides[index].classList.add('active');
         }
 
         function nextSlide() {
