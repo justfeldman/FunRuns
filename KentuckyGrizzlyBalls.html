@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kentucky Grizzly Ballz</title>
+    <!-- Link to Google Fonts for Anton -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+    <style>
+        body {
+            font-family: 'Anton', sans-serif;
+            background: linear-gradient(135deg, #0033A0, #FFD700); /* Blue to Gold gradient */
+            color: #FFF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            width: 100%;
+            background: #0033A0; /* Dark blue for header */
+            color: #FFFFFF;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 5px #000;
+            border-bottom: 5px solid #FFD700; /* Gold bottom border */
+        }
+
+        .jersey-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay behind jersey */
+            border: 5px solid #FFF; /* White border around jersey */
+            box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .jersey-img {
+            height: 250px;
+            margin: 0 15px;
+            border-radius: 10px;
+        }
+
+        .team-record {
+            margin: 20px;
+            font-size: 1.5em;
+            color: #FFD700; /* Gold color for record */
+            text-align: center;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .roster-table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.8); /* Dark background for table */
+            color: #FFF;
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .roster-table th, .roster-table td {
+            border: 2px solid #FFF; /* White borders */
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .roster-table th {
+            background: #FFD700; /* Gold for header */
+            color: #FFF;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .roster-table tr:hover {
+            background: rgba(255, 255, 255, 0.1); /* Light hover effect */
+        }
+
+        .back-button {
+            margin: 30px;
+            padding: 15px 30px;
+            background: #FFF;
+            color: #0033A0; /* Blue text */
+            text-decoration: none;
+            font-size: 1.2em;
+            border: 2px solid #0033A0; /* Blue border */
+            transition: 0.3s;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button:hover {
+            background: #0033A0; /* Blue hover */
+            color: #FFF;
+            border-color: #FFF;
+        }
+    </style>
+</head>
+<body>
+    <!-- Team Header -->
+    <div class="header">
+        Kentucky Grizzly Ballz
+    </div>
+
+    <!-- Team Jersey Display -->
+    <div class="jersey-container">
+        <img src="Kentucky.png" alt="Kentucky Grizzly Ballz Jersey" class="jersey-img">
+    </div>
+
+    <!-- Team Record -->
+    <div class="team-record">
+        Team Record: 1-0
+    </div>
+
+    <!-- Player Roster Table -->
+    <table class="roster-table">
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Points</th>
+            <th>Rebounds</th>
+            <th>Assists</th>
+            <th>Steals</th>
+            <th>Blocks</th>
+        </tr>
+        <tr>
+            <td>Daniel Snir</td>
+            <td>G</td>
+            <td>17</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Joey Silber</td>
+            <td>F</td>
+            <td>4</td>
+            <td>9</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Logan Shnier</td>
+            <td>G</td>
+            <td>6</td>
+            <td>3</td>
+            <td>3</td>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Aidan Gold</td>
+            <td>F</td>
+            <td>4</td>
+            <td>4</td>
+            <td>4</td>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Joe Kline</td>
+            <td>C</td>
+            <td>25</td>
+            <td>7</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Jack Minsky</td>
+            <td>F</td>
+            <td>2</td>
+            <td>5</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+    <!-- Back Button -->
+    <a href="rosters.html" class="back-button">Back to Rosters</a>
+</body>
+</html>
