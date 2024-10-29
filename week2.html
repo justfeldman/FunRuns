@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LBL - Week 2 Schedule</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+    <style>
+        body {
+            font-family: 'Anton', sans-serif;
+            background-color: #1c1c1c;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            background: #4B0082;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+        .header-logo {
+            height: 80px;
+            margin-right: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 auto;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+        .schedule-container {
+            max-width: 90%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border: 5px solid #4B0082;
+            border-radius: 10px;
+            position: relative;
+        }
+        .week-toggle {
+            position: absolute;
+            top: -30px;
+            right: 20px;
+            background-color: #4B0082;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th {
+            background-color: #4B0082;
+            color: white;
+            padding: 12px;
+            text-align: center;
+        }
+        td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+            color: black;
+        }
+        .preview-button, .error-button {
+            background-color: white;
+            color: #4B0082;
+            padding: 5px 10px;
+            border: 2px solid #4B0082;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .preview-button:hover, .error-button:hover {
+            background-color: #4B0082;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Screen Shot 2024-10-19 at 2.05.09 AM.png" alt="LBL Logo" class="header-logo">
+        <nav>
+            <ul>
+                <li><a href="funruns.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rosters.html">Rosters</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="statistics.html">Standings</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="schedule-container">
+        <!-- Week Toggle -->
+        <select class="week-toggle" onchange="location = this.value;">
+            <option value="week1.html">Week 1</option>
+            <option value="week2.html" selected>Week 2</option>
+        </select>
+
+        <h2 style="text-align:center; color:#4B0082; font-size: 2em; margin-top: 20px;">Fall '24 - Week 2 Schedule</h2>
+
+        <table>
+            <tr>
+                <th>Home vs Away</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Watch Live</th>
+                <th>Facility</th>
+                <th>Court</th>
+                <th>Reschedule/Error</th>
+            </tr>
+            <!-- Randomized Week 2 Games -->
+            <tr>
+                <td>Connex E vs Feinstein's Debt</td>
+                <td>2 November 2024</td>
+                <td>03:00 PM</td>
+                <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
+                <td>PSH North</td>
+                <td>Court 1</td>
+                <td><a href="https://formspree.io/f/xanyqzne" class="error-button">Report Issue</a></td>
+            </tr>
+            <tr>
+                <td>HABS vs KGB</td>
+                <td>2 November 2024</td>
+                <td>04:00 PM</td>
+                <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
+                <td>PSH North</td>
+                <td>Court 2</td>
+                <td><a href="https://formspree.io/f/xanyqzne" class="error-button">Report Issue</a></td>
+            </tr>
+            <tr>
+                <td>Sigs vs Lobsters</td>
+                <td>2 November 2024</td>
+                <td>05:00 PM</td>
+                <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
+                <td>PSH North</td>
+                <td>Court 1</td>
+                <td><a href="https://formspree.io/f/xanyqzne" class="error-button">Report Issue</a></td>
+            </tr>
+            <tr>
+                <td>Shooting Blanks vs The BusinessMen</td>
+                <td>2 November 2024</td>
+                <td>06:00 PM</td>
+                <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
+                <td>PSH North</td>
+                <td>Court 2</td>
+                <td><a href="https://formspree.io/f/xanyqzne" class="error-button">Report Issue</a></td>
+            </tr>
+            <tr>
+                <td>Zeta vs Deadeye</td>
+                <td>2 November 2024</td>
+                <td>07:00 PM</td>
+                <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
+                <td>PSH North</td>
+                <td>Court 1</td>
+                <td><a href="https://formspree.io/f/xanyqzne" class="error-button">Report Issue</a></td>
+            </tr>
+            <tr>
+                <td>Laskin Robbins vs Finders of Waldo</td>
+                <td>2 November 2024</td>
+                <td>08:00 PM</td>
+                <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
+                <td>PSH North</td>
+                <td>Court 2</td>
+                <td><a href="https://formspree.io/f/xanyqzne" class="error-button">Report Issue</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        <p style="color: white; text-align: center; padding: 20px;">&copy; 2024 London Basketball League. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
