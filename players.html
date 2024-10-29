@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LBL - Players</title>
+    <!-- Link to Google Fonts for Anton -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+    <style>
+        body {
+            font-family: 'Anton', sans-serif;
+            background: linear-gradient(135deg, #4B0082, #000000); /* Purple to Black gradient */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+        header {
+            background: #4B0082;
+            padding: 10px 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-logo {
+            height: 80px;
+        }
+        .podium-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .podium {
+            width: 150px;
+            background-color: #FFD700; /* Gold color */
+            border: 2px solid #4B0082;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            position: relative;
+        }
+        .podium:first-child {
+            height: 300px;
+            z-index: 2;
+        }
+        .podium:nth-child(2) {
+            height: 250px;
+        }
+        .podium:nth-child(3) {
+            height: 200px;
+        }
+        .podium h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .player-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 10px auto;
+            background-color: white;
+        }
+        .player-stats {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        .back-button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: #FFF;
+            color: #4B0082;
+            text-decoration: none;
+            font-size: 1.2em;
+            border: 2px solid #4B0082;
+            transition: 0.3s;
+            border-radius: 10px;
+        }
+        .back-button:hover {
+            background: #4B0082;
+            color: #FFF;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="Screen Shot 2024-10-19 at 2.05.09 AM.png" alt="LBL Logo" class="header-logo">
+    </header>
+
+    <!-- Podium Layout -->
+    <div class="podium-container">
+        <!-- First Place -->
+        <div class="podium">
+            <h2>1st Place</h2>
+            <div class="player-img" style="background-image: url('Player1.png'); background-size: cover;"></div>
+            <h3>Max Ceresia</h3>
+            <div class="player-stats">
+                <p>PPG: 34</p>
+                <p>RPG: 3</p>
+                <p>APG: 1</p>
+                <p>SPG: 2</p>
+                <p>BPG: 0</p>
+                <p>3PM PG: 5</p>
+            </div>
+        </div>
+
+        <!-- Second Place -->
+        <div class="podium">
+            <h2>2nd Place</h2>
+            <div class="player-img" style="background-image: url('Player2.png'); background-size: cover;"></div>
+            <h3>Jacob Rodin</h3>
+            <div class="player-stats">
+                <p>PPG: 34</p>
+                <p>RPG: 4</p>
+                <p>APG: 4</p>
+                <p>SPG: 4</p>
+                <p>BPG: 0</p>
+                <p>3PM PG: 8</p>
+            </div>
+        </div>
+
+        <!-- Third Place -->
+        <div class="podium">
+            <h2>3rd Place</h2>
+            <div class="player-img" style="background-image: url('Player3.png'); background-size: cover;"></div>
+            <h3>Shayne Tator</h3>
+            <div class="player-stats">
+                <p>PPG: 17</p>
+                <p>RPG: 14</p>
+                <p>APG: 4</p>
+                <p>SPG: 2</p>
+                <p>BPG: 0</p>
+                <p>3PM PG: 0</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Players (4th and 5th) -->
+    <div class="podium-container">
+        <!-- Fourth Place -->
+        <div class="podium" style="height: 150px;">
+            <h2>4th Place</h2>
+            <div class="player-img" style="background-image: url('Player4.png'); background-size: cover;"></div>
+            <h3>Evan Shivek</h3>
+            <div class="player-stats">
+                <p>PPG: 18</p>
+                <p>RPG: 4</p>
+                <p>APG: 4</p>
+                <p>SPG: 4</p>
+                <p>BPG: 3</p>
+                <p>3PM PG: 4</p>
+            </div>
+        </div>
+
+        <!-- Fifth Place -->
+        <div class="podium" style="height: 150px;">
+            <h2>5th Place</h2>
+            <div class="player-img" style="background-image: url('Player5.png'); background-size: cover;"></div>
+            <h3>Joe Kline</h3>
+            <div class="player-stats">
+                <p>PPG: 25</p>
+                <p>RPG: 7</p>
+                <p>APG: 1</p>
+                <p>SPG: 1</p>
+                <p>BPG: 0</p>
+                <p>3PM PG: 1</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Main Page Button -->
+    <a href="funruns.html" class="back-button">Back to Main Page</a>
+</body>
+</html>
