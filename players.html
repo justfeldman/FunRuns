@@ -3,105 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LBL - Players Leaderboard</title>
+    <title>LBL - League Leaders</title>
     <!-- Link to Google Fonts for Anton -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Anton', sans-serif;
-            background: linear-gradient(135deg, #4B0082, #000000); /* Purple to Black gradient */
+            background: linear-gradient(135deg, #4B0082, #000); /* Purple to Black gradient */
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
-            height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         header {
             background: #4B0082;
-            padding: 20px;
-            width: 100%;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
-            justify-content: center;
         }
         .header-logo {
             height: 80px;
+            margin-right: 20px;
         }
-        .leaderboard-title {
-            margin-top: 30px;
-            font-size: 3em;
-            color: #FFD700; /* Gold color for title */
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-        }
-        .podium-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            margin-top: 40px;
-            position: relative;
-        }
-        .podium {
-            background: rgba(75, 0, 130, 0.9); /* Semi-transparent purple */
-            border: 3px solid #FFD700; /* Gold border */
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            margin: 0 10px;
-            color: #FFFFFF;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-        }
-        .podium:first-child {
-            height: 320px;
-            z-index: 2;
-            transform: translateY(-30px);
-        }
-        .podium:nth-child(2) {
-            height: 280px;
-            transform: translateY(-15px);
-        }
-        .podium:nth-child(3) {
-            height: 240px;
-        }
-        .podium h2 {
+        nav ul {
+            list-style-type: none;
+            padding: 0;
             margin: 0;
-            font-size: 1.8em;
-            margin-bottom: 10px;
-            color: #FFD700; /* Gold for position */
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            flex: 1;
+            background-color: #4B0082;
         }
-        .player-stats {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-            font-size: 1.1em;
-            line-height: 1.6;
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+        .leaderboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent overlay */
+            border: 2px solid #4B0082; /* Purple border */
+            box-shadow: 0px 0px 20px rgba(75, 0, 130, 0.7);
+            width: 80%;
+            max-width: 900px;
+            border-radius: 15px;
+        }
+        .leader-title {
+            font-size: 2em;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .player-box {
+            width: 90%;
+            margin: 15px 0;
+            padding: 15px;
+            background: #1E1E1E; /* Dark black */
+            border: 2px solid white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+        .player-box:hover {
+            transform: scale(1.05);
         }
         .player-name {
             font-size: 1.5em;
-            margin: 5px 0;
-            color: #FFD700;
+            color: #FFD700; /* Gold text for player names */
+            margin-bottom: 10px;
         }
-        .additional-players {
+        .player-stats {
+            color: white;
+            font-size: 1.1em;
             display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        .additional-player {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 15px;
-            margin: 10px;
-            border-radius: 10px;
-            text-align: center;
-            width: 180px;
-            border: 2px solid #FFD700;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
         }
         .back-button {
-            margin-top: 50px;
+            margin-top: 30px;
             padding: 15px 30px;
             background: #FFF;
             color: #4B0082;
@@ -110,11 +105,10 @@
             border: 2px solid #4B0082;
             transition: 0.3s;
             border-radius: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
         .back-button:hover {
             background: #4B0082;
-            color: #FFF;
+            color: white;
         }
     </style>
 </head>
@@ -122,88 +116,91 @@
     <!-- Header -->
     <header>
         <img src="Screen Shot 2024-10-19 at 2.05.09 AM.png" alt="LBL Logo" class="header-logo">
+        <nav>
+            <ul>
+                <li><a href="funruns.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rosters.html">Rosters</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="statistics.html">Standings</a></li>
+                <li><a href="players.html" class="active">Players</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Title -->
-    <div class="leaderboard-title">Top Players Leaderboard</div>
+    <!-- League Leaders Container -->
+    <div class="leaderboard-container">
+        <div class="leader-title">League Leaders</div>
 
-    <!-- Podium Layout -->
-    <div class="podium-container">
-        <!-- First Place -->
-        <div class="podium">
-            <h2>1st Place</h2>
+        <!-- 1st Player -->
+        <div class="player-box">
             <div class="player-name">Max Ceresia</div>
             <div class="player-stats">
-                <p>PPG: 34</p>
-                <p>RPG: 3</p>
-                <p>APG: 1</p>
-                <p>SPG: 2</p>
-                <p>BPG: 0</p>
-                <p>3PM PG: 5</p>
+                <div>PPG: 34</div>
+                <div>RPG: 3</div>
+                <div>APG: 1</div>
+                <div>SPG: 2</div>
+                <div>BPG: 0</div>
+                <div>3PM PG: 5</div>
             </div>
         </div>
 
-        <!-- Second Place -->
-        <div class="podium">
-            <h2>2nd Place</h2>
+        <!-- 2nd Player -->
+        <div class="player-box">
             <div class="player-name">Jacob Rodin</div>
             <div class="player-stats">
-                <p>PPG: 34</p>
-                <p>RPG: 4</p>
-                <p>APG: 4</p>
-                <p>SPG: 4</p>
-                <p>BPG: 0</p>
-                <p>3PM PG: 8</p>
+                <div>PPG: 34</div>
+                <div>RPG: 4</div>
+                <div>APG: 4</div>
+                <div>SPG: 4</div>
+                <div>BPG: 0</div>
+                <div>3PM PG: 8</div>
             </div>
         </div>
 
-        <!-- Third Place -->
-        <div class="podium">
-            <h2>3rd Place</h2>
+        <!-- 3rd Player -->
+        <div class="player-box">
             <div class="player-name">Shayne Tator</div>
             <div class="player-stats">
-                <p>PPG: 17</p>
-                <p>RPG: 14</p>
-                <p>APG: 4</p>
-                <p>SPG: 2</p>
-                <p>BPG: 0</p>
-                <p>3PM PG: 0</p>
+                <div>PPG: 17</div>
+                <div>RPG: 14</div>
+                <div>APG: 4</div>
+                <div>SPG: 2</div>
+                <div>BPG: 0</div>
+                <div>3PM PG: 0</div>
             </div>
         </div>
-    </div>
 
-    <!-- Additional Players (4th and 5th) -->
-    <div class="additional-players">
-        <!-- Fourth Place -->
-        <div class="additional-player">
-            <h2>4th Place</h2>
+        <!-- 4th Player -->
+        <div class="player-box">
             <div class="player-name">Evan Shivek</div>
             <div class="player-stats">
-                <p>PPG: 18</p>
-                <p>RPG: 4</p>
-                <p>APG: 4</p>
-                <p>SPG: 4</p>
-                <p>BPG: 3</p>
-                <p>3PM PG: 4</p>
+                <div>PPG: 18</div>
+                <div>RPG: 4</div>
+                <div>APG: 4</div>
+                <div>SPG: 4</div>
+                <div>BPG: 3</div>
+                <div>3PM PG: 4</div>
             </div>
         </div>
 
-        <!-- Fifth Place -->
-        <div class="additional-player">
-            <h2>5th Place</h2>
+        <!-- 5th Player -->
+        <div class="player-box">
             <div class="player-name">Joe Kline</div>
             <div class="player-stats">
-                <p>PPG: 25</p>
-                <p>RPG: 7</p>
-                <p>APG: 1</p>
-                <p>SPG: 1</p>
-                <p>BPG: 0</p>
-                <p>3PM PG: 1</p>
+                <div>PPG: 25</div>
+                <div>RPG: 7</div>
+                <div>APG: 1</div>
+                <div>SPG: 1</div>
+                <div>BPG: 0</div>
+                <div>3PM PG: 1</div>
             </div>
         </div>
-    </div>
 
-    <!-- Back to Main Page Button -->
-    <a href="funruns.html" class="back-button">Back to Main Page</a>
+        <!-- Back to Main Page Button -->
+        <a href="funruns.html" class="back-button">Back to Main Page</a>
+    </div>
 </body>
 </html>
