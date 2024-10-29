@@ -10,21 +10,24 @@
     <style>
         body {
             font-family: 'Anton', sans-serif;
-            background: #1E1E1E; /* Darker black background */
+            background: #1E1E1E;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
+
         header {
             background: #4B0082;
             padding: 10px 20px;
             display: flex;
             align-items: center;
         }
+
         .header-logo {
             height: 80px;
             margin-right: 20px;
         }
+
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -33,10 +36,12 @@
             flex: 1;
             background-color: #4B0082;
         }
+
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
@@ -44,6 +49,7 @@
             font-size: 1.2em;
             transition: color 0.3s;
         }
+
         nav ul li a:hover {
             color: #FFD700;
         }
@@ -55,7 +61,7 @@
             margin-top: 30px;
         }
 
-        .jersey-grid {
+        .grid-wrapper {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 20px;
@@ -65,24 +71,25 @@
         }
 
         .jersey {
-            width: 110px; /* Reduced size */
+            width: 120px;
             height: auto;
-            transition: transform 0.3s;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        .jersey:hover {
-            transform: scale(1.1);
+        .jersey.loaded {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .center-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px 0;
+            margin-top: 30px;
+            text-align: center;
         }
 
         .lbl-logo {
-            width: 120px; /* Slightly larger logo */
+            width: 100px;
             height: auto;
             margin-bottom: 10px;
         }
@@ -90,19 +97,6 @@
         .tagline {
             font-size: 22px;
             color: #fff;
-        }
-
-        .grid-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .grid-row {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
         }
     </style>
 </head>
@@ -124,38 +118,24 @@
         </nav>
     </header>
 
-<!-- Main Content -->
-<div class="roster-container">
-    <!-- Jerseys in Grid Circular Layout -->
-    <div class="grid-wrapper">
-        <!-- Jerseys Above the Logo -->
-        <div class="grid-row">
-            <img src="Barcelone.png" alt="Barcelona Jersey" class="jersey">
-            <img src="Pacers.png" alt="Pacers Jersey" class="jersey">
-            <!-- Link to Kentucky Grizzly Ballz -->
-            <a href="KentuckyGrizzlyBalls.html">
+    <!-- Main Content -->
+    <div class="roster-container">
+        <!-- Jerseys in Grid Circular Layout -->
+        <div class="grid-wrapper">
+            <!-- Link to Kentucky Grizzly Ballz Page -->
+            <a href="KentuckyGrizzlyBalls.html" class="jersey-link">
                 <img src="Kentucky.png" alt="Kentucky Grizzly Ballz Jersey" class="jersey">
             </a>
-            <!-- Link to Shooting Blanks -->
-            <a href="shootingblanks.html">
-                <img src="Kings.png" alt="Shooting Blanks Jersey" class="jersey">
+            <!-- Link to Shooting Blanks Page -->
+            <a href="shootingblanks.html" class="jersey-link">
+                <img src="Kings.png" alt="Kings Jersey" class="jersey">
             </a>
-            <img src="Orange.png" alt="Orange Jersey" class="jersey">
-        </div>
-
-        <!-- Second Row of Jerseys -->
-        <div class="grid-row">
-            <!-- Link to ZBT -->
-            <a href="zbt.html">
+            <!-- Link to ZBT Page -->
+            <a href="zbt.html" class="jersey-link">
                 <img src="RipCity.png" alt="Rip City Jersey" class="jersey">
             </a>
-<a href="suns.html">
-            <img src="Suns.png" alt="Suns Jersey" class="jersey">
-<a></a>
-            <img src="Celtics.png" alt="Celtics Jersey" class="jersey">
-            <img src="JackieMoon.png" alt="Jackie Moon Jersey" class="jersey">
-            <!-- Link to Schrieders Shooters -->
-            <a href="schriedershooters.html">
+            <!-- Link to Schrieder's Shooters Page -->
+            <a href="schriedershooters.html" class="jersey-link">
                 <img src="RedeemTeam.png" alt="Redeem Team Jersey" class="jersey">
             </a>
         </div>
@@ -163,29 +143,20 @@
         <!-- LBL Logo and Tagline -->
         <div class="center-content">
             <img src="Screen Shot 2024-10-23 at 4.42.44 PM.png" alt="LBL Logo" class="lbl-logo">
-            <p class="tagline">The Ball League For Washed Up Beauties.</p>
-        </div>
-
-        <!-- Jerseys Below the Logo -->
-        <div class="grid-row">
-            <img src="OtherAllStars.png" alt="Other All Stars Jersey" class="jersey">
-            <img src="Idek.png" alt="IDK Jersey" class="jersey">
-            <img src="All Stars.png" alt="All Stars Jersey" class="jersey">
-            <img src="Hawks.png" alt="Hawks Jersey" class="jersey">
-            <img src="Nets.png" alt="Nets Jersey" class="jersey">
-        </div>
-
-        <!-- Last Row of Jerseys -->
-        <div class="grid-row">
-            <img src="Oregon.png" alt="Oregon Jersey" class="jersey">
-            <img src="Vice.png" alt="Vice Jersey" class="jersey">
-            <img src="Pelicans.png" alt="Pelicans Jersey" class="jersey">
-<a href="zeta.html">
-            <img src="Raptors.png" alt="Raptors Jersey" class="jersey">
-<a>
-            <img src="Wolves.png" alt="Wolves Jersey" class="jersey">
+            <p class="tagline">The Ball League For Washed Up Beauties</p>
         </div>
     </div>
-</div>
+
+    <script>
+        // JavaScript to add smooth loading effect to jerseys
+        document.addEventListener('DOMContentLoaded', function() {
+            const jerseys = document.querySelectorAll('.jersey');
+            jerseys.forEach((jersey, index) => {
+                setTimeout(() => {
+                    jersey.classList.add('loaded');
+                }, index * 200); // Staggered loading effect
+            });
+        });
+    </script>
 </body>
 </html>
