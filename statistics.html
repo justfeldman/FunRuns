@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LBL - Schedule</title>
+    <title>LBL - Standings</title>
     <!-- Link to Google Fonts for Anton -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
     <style>
         body {
             font-family: 'Anton', sans-serif;
-            background-color: #1c1c1c;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+            background-color: #1a1a1a; /* Dark background for a better aesthetic */
         }
         header {
-            background: #4B0082;
+            background: #4B0082; /* Deep purple background */
             padding: 10px 20px;
             display: flex;
             align-items: center;
         }
         .header-logo {
             height: 80px;
-            margin-right: 10px;
+            margin-right: 20px;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 0 auto;
+            margin: 0;
+            flex: 1;
             text-align: center;
         }
         nav ul li {
@@ -44,75 +44,53 @@
         nav ul li a:hover {
             color: #FFD700;
         }
-        .tab-container {
-            margin: 50px auto;
-            padding: 10px;
-            max-width: 900px;
-            background-color: #4B0082;
-            border-radius: 5px;
-        }
-        .tab-header {
-            display: flex;
-            justify-content: space-around;
-            background: #FFD700;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .tab-header div {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            font-size: 1.5em;
-            color: #4B0082;
-            transition: background 0.3s, color 0.3s;
-        }
-        .tab-header div:hover, .tab-header .active {
-            background: #4B0082;
-            color: #FFD700;
-        }
-        .schedule-week {
-            display: none;
-            padding: 20px;
-            background-color: white;
-            color: black;
+        .standings-container {
+            background-color: #333;
             border-radius: 10px;
-            margin-top: 10px;
-            border: 2px solid #4B0082;
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 900px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
-        .schedule-week.active {
-            display: block;
+        .standings-header {
+            background-color: #4B0082; /* Deep purple background */
+            color: white;
+            padding: 10px;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            border-radius: 5px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .conference {
+            display: flex;
+            justify-content: space-between;
             margin-top: 20px;
         }
-        th {
-            background-color: #4B0082;
-            color: white;
-            padding: 12px;
-            text-align: center;
-        }
-        td {
-            padding: 12px;
-            text-align: center;
-            border: 1px solid #ddd;
-            color: black;
-        }
-        .preview-button, .error-button {
-            background-color: white;
-            color: #4B0082;
-            padding: 5px 10px;
-            border: 2px solid #4B0082;
+        .conference-box {
+            width: 48%;
+            background-color: #1a1a1a;
+            padding: 10px;
             border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            margin: 5px;
         }
-        .preview-button:hover, .error-button:hover {
+        .conference-box h2 {
             background-color: #4B0082;
-            color: white;
+            padding: 10px;
+            font-size: 1.5em;
+            margin: 0;
+            border-radius: 5px 5px 0 0;
+        }
+        .team-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .team-list li {
+            background-color: #444;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
         }
     </style>
 </head>
@@ -133,93 +111,41 @@
         </nav>
     </header>
 
-    <!-- Week Tabs -->
-    <div class="tab-container">
-        <div class="tab-header">
-            <div onclick="showWeek(0)" class="active">Week 1</div>
-            <div onclick="showWeek(1)">Week 2</div>
-        </div>
+    <div class="standings-container">
+        <div class="standings-header">Standings</div>
+        <p>Current standings for the 2024 season.</p>
 
-        <!-- Week 1 Content -->
-        <div class="schedule-week active" id="week-0">
-            <table>
-                <tr>
-                    <th>Home vs Away</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Score</th>
-                    <th>Watch Live</th>
-                    <th>Facility</th>
-                    <th>Court</th>
-                    <th>Reschedule/Error</th>
-                </tr>
-                <!-- Week 1 Games -->
-                <tr>
-                    <td>Shooting Blanks vs KGB</td>
-                    <td>26 October 2024</td>
-                    <td>03:00 PM</td>
-                    <td>40 - 62</td>
-                    <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
-                    <td>PSH North</td>
-                    <td>Court 1</td>
-                    <td><a href="contact.html" class="error-button">Report Issue</a></td>
-                </tr>
-                <!-- Add more Week 1 games here -->
-            </table>
-        </div>
+        <div class="conference">
+            <!-- Eastern Conference -->
+            <div class="conference-box">
+                <h2>Eastern Conference</h2>
+                <ul class="team-list">
+                    <li>1. HABS - Wins: 1, Losses: 0</li>
+                    <li>2. Lobsters - Wins: 1, Losses: 0</li>
+                    <li>3. Zeta - Wins: 1, Losses: 0</li>
+                    <li>4. Finders of Waldo - Wins: 0, Losses: 0</li>
+                    <li>5. Sigs - Wins: 0, Losses: 0</li>
+                    <li>6. ZBT - Wins: 0, Losses: 1</li>
+                </ul>
+            </div>
 
-        <!-- Week 2 Content -->
-        <div class="schedule-week" id="week-1">
-            <table>
-                <tr>
-                    <th>Home vs Away</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Score</th>
-                    <th>Watch Live</th>
-                    <th>Facility</th>
-                    <th>Court</th>
-                    <th>Reschedule/Error</th>
-                </tr>
-                <!-- Week 2 Randomized Games -->
-                <tr>
-                    <td>ZBT vs Kentucky Grizzly Ballz</td>
-                    <td>03 November 2024</td>
-                    <td>03:00 PM</td>
-                    <td>--</td>
-                    <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
-                    <td>PSH South</td>
-                    <td>Court 1</td>
-                    <td><a href="https://formspree.io/f/xanyqzne" class="error-button">Report Issue</a></td>
-                </tr>
-                <tr>
-                    <td>Lobsters vs Sigs</td>
-                    <td>03 November 2024</td>
-                    <td>04:00 PM</td>
-                    <td>--</td>
-                    <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
-                    <td>PSH South</td>
-                    <td>Court 2</td>
-                    <td><a href="https://formspree.io/f/xanyqzne" class="error-button">Report Issue</a></td>
-                </tr>
-                <!-- Add more Week 2 games here -->
-            </table>
+            <!-- Western Conference -->
+            <div class="conference-box">
+                <h2>Western Conference</h2>
+                <ul class="team-list">
+                    <li>1. KGB - Wins: 1, Losses: 0</li>
+                    <li>2. Laskin Robbins - Wins: 1, Losses: 0</li>
+                    <li>3. Shooters - Wins: 0, Losses: 1</li>
+                    <li>4. Feinstein's Debt - Wins: 0, Losses: 1</li>
+                    <li>5. Diddy's Disciples - Wins: 0, Losses: 1</li>
+                    <li>6. Shooting Blanks - Wins: 0, Losses: 1</li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <footer>
         <p style="color: white; text-align: center; padding: 20px;">&copy; 2024 London Basketball League. All rights reserved.</p>
     </footer>
-
-    <script>
-        function showWeek(index) {
-            const weeks = document.getElementsByClassName('schedule-week');
-            const tabs = document.querySelectorAll('.tab-header div');
-            weeks.forEach((week, i) => {
-                week.classList.toggle('active', i === index);
-                tabs[i].classList.toggle('active', i === index);
-            });
-        }
-    </script>
 </body>
 </html>
