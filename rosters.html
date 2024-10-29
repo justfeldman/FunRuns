@@ -62,20 +62,24 @@
         }
 
         .grid-wrapper {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             gap: 20px;
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
+        }
+
+        .grid-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
         .jersey {
-            width: 120px;
+            width: 110px;
             height: auto;
             opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: scale(0.8);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
         .jersey.loaded {
@@ -83,13 +87,19 @@
             transform: scale(1);
         }
 
+        .jersey-link {
+            display: inline-block;
+        }
+
         .center-content {
-            margin-top: 30px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
         }
 
         .lbl-logo {
-            width: 100px;
+            width: 120px;
             height: auto;
             margin-bottom: 10px;
         }
@@ -122,28 +132,59 @@
     <div class="roster-container">
         <!-- Jerseys in Grid Circular Layout -->
         <div class="grid-wrapper">
-            <!-- Link to Kentucky Grizzly Ballz Page -->
-            <a href="KentuckyGrizzlyBalls.html" class="jersey-link">
-                <img src="Kentucky.png" alt="Kentucky Grizzly Ballz Jersey" class="jersey">
-            </a>
-            <!-- Link to Shooting Blanks Page -->
-            <a href="shootingblanks.html" class="jersey-link">
-                <img src="Kings.png" alt="Kings Jersey" class="jersey">
-            </a>
-            <!-- Link to ZBT Page -->
-            <a href="zbt.html" class="jersey-link">
-                <img src="RipCity.png" alt="Rip City Jersey" class="jersey">
-            </a>
-            <!-- Link to Schrieder's Shooters Page -->
-            <a href="schriedershooters.html" class="jersey-link">
-                <img src="RedeemTeam.png" alt="Redeem Team Jersey" class="jersey">
-            </a>
-        </div>
+            <!-- Jerseys Above the Logo -->
+            <div class="grid-row">
+                <img src="Barcelone.png" alt="Barcelona Jersey" class="jersey">
+                <img src="Pacers.png" alt="Pacers Jersey" class="jersey">
+                <a href="KentuckyGrizzlyBalls.html" class="jersey-link">
+                    <img src="Kentucky.png" alt="Kentucky Grizzly Ballz Jersey" class="jersey">
+                </a>
+                <a href="shootingblanks.html" class="jersey-link">
+                    <img src="Kings.png" alt="Shooting Blanks Jersey" class="jersey">
+                </a>
+                <img src="Orange.png" alt="Orange Jersey" class="jersey">
+            </div>
 
-        <!-- LBL Logo and Tagline -->
-        <div class="center-content">
-            <img src="Screen Shot 2024-10-23 at 4.42.44 PM.png" alt="LBL Logo" class="lbl-logo">
-            <p class="tagline">The Ball League For Washed Up Beauties</p>
+            <!-- Second Row of Jerseys -->
+            <div class="grid-row">
+                <a href="zbt.html" class="jersey-link">
+                    <img src="RipCity.png" alt="Rip City Jersey" class="jersey">
+                </a>
+                <a href="suns.html" class="jersey-link">
+                    <img src="Suns.png" alt="Suns Jersey" class="jersey">
+                </a>
+                <img src="Celtics.png" alt="Celtics Jersey" class="jersey">
+                <img src="JackieMoon.png" alt="Jackie Moon Jersey" class="jersey">
+                <a href="schriedershooters.html" class="jersey-link">
+                    <img src="RedeemTeam.png" alt="Redeem Team Jersey" class="jersey">
+                </a>
+            </div>
+
+            <!-- LBL Logo and Tagline -->
+            <div class="center-content">
+                <img src="Screen Shot 2024-10-23 at 4.42.44 PM.png" alt="LBL Logo" class="lbl-logo">
+                <p class="tagline">The Ball League For Washed Up Beauties.</p>
+            </div>
+
+            <!-- Jerseys Below the Logo -->
+            <div class="grid-row">
+                <img src="OtherAllStars.png" alt="Other All Stars Jersey" class="jersey">
+                <img src="Idek.png" alt="IDK Jersey" class="jersey">
+                <img src="All Stars.png" alt="All Stars Jersey" class="jersey">
+                <img src="Hawks.png" alt="Hawks Jersey" class="jersey">
+                <img src="Nets.png" alt="Nets Jersey" class="jersey">
+            </div>
+
+            <!-- Last Row of Jerseys -->
+            <div class="grid-row">
+                <img src="Oregon.png" alt="Oregon Jersey" class="jersey">
+                <img src="Vice.png" alt="Vice Jersey" class="jersey">
+                <img src="Pelicans.png" alt="Pelicans Jersey" class="jersey">
+                <a href="zeta.html" class="jersey-link">
+                    <img src="Raptors.png" alt="Raptors Jersey" class="jersey">
+                </a>
+                <img src="Wolves.png" alt="Wolves Jersey" class="jersey">
+            </div>
         </div>
     </div>
 
