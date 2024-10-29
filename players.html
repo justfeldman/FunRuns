@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LBL - Players</title>
+    <title>LBL - Players Leaderboard</title>
     <!-- Link to Google Fonts for Anton -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
     <style>
@@ -16,10 +16,12 @@
             flex-direction: column;
             align-items: center;
             color: white;
+            height: 100vh;
+            overflow: hidden;
         }
         header {
             background: #4B0082;
-            padding: 10px 20px;
+            padding: 20px;
             width: 100%;
             display: flex;
             align-items: center;
@@ -28,53 +30,78 @@
         .header-logo {
             height: 80px;
         }
+        .leaderboard-title {
+            margin-top: 30px;
+            font-size: 3em;
+            color: #FFD700; /* Gold color for title */
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
         .podium-container {
             display: flex;
-            align-items: flex-end;
             justify-content: center;
+            align-items: flex-end;
             margin-top: 40px;
-        }
-        .podium {
-            width: 150px;
-            background-color: #FFD700; /* Gold color */
-            border: 2px solid #4B0082;
-            margin: 10px;
-            padding: 10px;
-            text-align: center;
-            border-radius: 5px;
             position: relative;
         }
+        .podium {
+            background: rgba(75, 0, 130, 0.9); /* Semi-transparent purple */
+            border: 3px solid #FFD700; /* Gold border */
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 0 10px;
+            color: #FFFFFF;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        }
         .podium:first-child {
-            height: 300px;
+            height: 320px;
             z-index: 2;
+            transform: translateY(-30px);
         }
         .podium:nth-child(2) {
-            height: 250px;
+            height: 280px;
+            transform: translateY(-15px);
         }
         .podium:nth-child(3) {
-            height: 200px;
+            height: 240px;
         }
         .podium h2 {
             margin: 0;
-            font-size: 1.5em;
-        }
-        .player-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 10px auto;
-            background-color: white;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #FFD700; /* Gold for position */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
         }
         .player-stats {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             padding: 10px;
-            margin-top: 5px;
+            margin-top: 10px;
             border-radius: 5px;
-            text-align: left;
-            font-size: 0.9em;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .player-name {
+            font-size: 1.5em;
+            margin: 5px 0;
+            color: #FFD700;
+        }
+        .additional-players {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .additional-player {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+            width: 180px;
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         .back-button {
-            margin-top: 30px;
+            margin-top: 50px;
             padding: 15px 30px;
             background: #FFF;
             color: #4B0082;
@@ -83,6 +110,7 @@
             border: 2px solid #4B0082;
             transition: 0.3s;
             border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
         .back-button:hover {
             background: #4B0082;
@@ -96,13 +124,15 @@
         <img src="Screen Shot 2024-10-19 at 2.05.09 AM.png" alt="LBL Logo" class="header-logo">
     </header>
 
+    <!-- Title -->
+    <div class="leaderboard-title">Top Players Leaderboard</div>
+
     <!-- Podium Layout -->
     <div class="podium-container">
         <!-- First Place -->
         <div class="podium">
             <h2>1st Place</h2>
-            <div class="player-img" style="background-image: url('Player1.png'); background-size: cover;"></div>
-            <h3>Max Ceresia</h3>
+            <div class="player-name">Max Ceresia</div>
             <div class="player-stats">
                 <p>PPG: 34</p>
                 <p>RPG: 3</p>
@@ -116,8 +146,7 @@
         <!-- Second Place -->
         <div class="podium">
             <h2>2nd Place</h2>
-            <div class="player-img" style="background-image: url('Player2.png'); background-size: cover;"></div>
-            <h3>Jacob Rodin</h3>
+            <div class="player-name">Jacob Rodin</div>
             <div class="player-stats">
                 <p>PPG: 34</p>
                 <p>RPG: 4</p>
@@ -131,8 +160,7 @@
         <!-- Third Place -->
         <div class="podium">
             <h2>3rd Place</h2>
-            <div class="player-img" style="background-image: url('Player3.png'); background-size: cover;"></div>
-            <h3>Shayne Tator</h3>
+            <div class="player-name">Shayne Tator</div>
             <div class="player-stats">
                 <p>PPG: 17</p>
                 <p>RPG: 14</p>
@@ -145,12 +173,11 @@
     </div>
 
     <!-- Additional Players (4th and 5th) -->
-    <div class="podium-container">
+    <div class="additional-players">
         <!-- Fourth Place -->
-        <div class="podium" style="height: 150px;">
+        <div class="additional-player">
             <h2>4th Place</h2>
-            <div class="player-img" style="background-image: url('Player4.png'); background-size: cover;"></div>
-            <h3>Evan Shivek</h3>
+            <div class="player-name">Evan Shivek</div>
             <div class="player-stats">
                 <p>PPG: 18</p>
                 <p>RPG: 4</p>
@@ -162,10 +189,9 @@
         </div>
 
         <!-- Fifth Place -->
-        <div class="podium" style="height: 150px;">
+        <div class="additional-player">
             <h2>5th Place</h2>
-            <div class="player-img" style="background-image: url('Player5.png'); background-size: cover;"></div>
-            <h3>Joe Kline</h3>
+            <div class="player-name">Joe Kline</div>
             <div class="player-stats">
                 <p>PPG: 25</p>
                 <p>RPG: 7</p>
