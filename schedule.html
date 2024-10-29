@@ -3,20 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LBL - Schedule</title>
-    <!-- Link to Google Fonts for Anton -->
+    <title>LBL - Week 1 Schedule</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Anton', sans-serif;
-            background-color: #1c1c1c; /* Consistent dark gray background */
+            background-color: #1c1c1c;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
         header {
             background: #4B0082;
@@ -33,8 +28,6 @@
             padding: 0;
             margin: 0 auto;
             text-align: center;
-            flex: 1;
-            background-color: #4B0082;
         }
         nav ul li {
             display: inline;
@@ -55,18 +48,21 @@
             margin: 50px auto;
             padding: 20px;
             background-color: white;
-            border: 5px solid #3c3c3c; /* Dark gray border */
+            border: 5px solid #4B0082;
             border-radius: 10px;
             position: relative;
         }
-        .header-bar {
+        .week-toggle {
+            position: absolute;
+            top: -30px;
+            right: 20px;
             background-color: #4B0082;
-            padding: 10px;
             color: white;
-            font-size: 1.5em;
-            text-align: center;
-            margin-bottom: 10px;
-            font-family: 'Anton', sans-serif;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
         }
         table {
             width: 100%;
@@ -78,7 +74,6 @@
             color: white;
             padding: 12px;
             text-align: center;
-            font-family: 'Anton', sans-serif;
         }
         td {
             padding: 12px;
@@ -86,22 +81,16 @@
             border: 1px solid #ddd;
             color: black;
         }
-        .score {
-            font-weight: bold;
-            color: #4B0082;
-        }
-        .preview-button {
+        .preview-button, .error-button {
             background-color: white;
             color: #4B0082;
             padding: 5px 10px;
             border: 2px solid #4B0082;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
             text-decoration: none;
-            font-family: 'Anton', sans-serif;
         }
-        .preview-button:hover {
+        .preview-button:hover, .error-button:hover {
             background-color: #4B0082;
             color: white;
         }
@@ -125,68 +114,38 @@
     </header>
 
     <div class="schedule-container">
-        <!-- Purple header bar -->
-        <div class="header-bar">Fall '24 - Week 1 Results</div>
+        <!-- Week Toggle -->
+        <select class="week-toggle" onchange="location = this.value;">
+            <option value="week1.html">Week 1</option>
+            <option value="week2.html">Week 2</option>
+        </select>
 
-        <!-- Week 1 schedule with scores -->
-        <div class="schedule-week active" id="week-0">
-            <table>
-                <tr>
-                    <th>Home vs Away</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Score</th>
-                    <th>Watch Live</th>
-                    <th>Facility</th>
-                    <th>Court</th>
-                </tr>
-                <tr>
-                    <td>KGB vs Shooting Blanks</td>
-                    <td>26 October 2024</td>
-                    <td>03:00 PM</td>
-                    <td class="score">62 - 40</td>
-                    <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
-                    <td>PSH North</td>
-                    <td>Court 1</td>
-                </tr>
-                <tr>
-                    <td>Zeta vs ZBT</td>
-                    <td>26 October 2024</td>
-                    <td>04:00 PM</td>
-                    <td class="score">55 - 51</td>
-                    <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
-                    <td>PSH North</td>
-                    <td>Court 2</td>
-                </tr>
-                <tr>
-                    <td>Laskin Robbins vs Diddy's Disciples</td>
-                    <td>26 October 2024</td>
-                    <td>05:00 PM</td>
-                    <td class="score">52 - 43</td>
-                    <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
-                    <td>PSH North</td>
-                    <td>Court 1</td>
-                </tr>
-                <tr>
-                    <td>Feinstein's Debt vs HABS</td>
-                    <td>26 October 2024</td>
-                    <td>05:00 PM</td>
-                    <td class="score">48 - 55</td>
-                    <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
-                    <td>PSH North</td>
-                    <td>Court 2</td>
-                </tr>
-                <tr>
-                    <td>Shooters vs Lobsters</td>
-                    <td>26 October 2024</td>
-                    <td>06:00 PM</td>
-                    <td class="score">35 - 47</td>
-                    <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
-                    <td>PSH North</td>
-                    <td>Court 1</td>
-                </tr>
-            </table>
-        </div>
+        <h2 style="text-align:center; color:#4B0082; font-size: 2em; margin-top: 20px;">Fall '24 - Week 1 Results</h2>
+
+        <table>
+            <tr>
+                <th>Home vs Away</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Score</th>
+                <th>Watch Live</th>
+                <th>Facility</th>
+                <th>Court</th>
+                <th>Reschedule/Error</th>
+            </tr>
+            <!-- Week 1 Games -->
+            <tr>
+                <td>KGB vs Shooting Blanks</td>
+                <td>26 October 2024</td>
+                <td>03:00 PM</td>
+                <td>62 - 40</td>
+                <td><a href="https://www.youtube.com" target="_blank" class="preview-button">Watch</a></td>
+                <td>PSH North</td>
+                <td>Court 1</td>
+                <td><a href="https://formspree.io/f/xanyqzne" class="error-button">Report Issue</a></td>
+            </tr>
+            <!-- Add more games here -->
+        </table>
     </div>
 
     <footer>
