@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diddy's Disciples</title>
+    <!-- Link to Google Fonts for Anton -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+    <style>
+        body {
+            font-family: 'Anton', sans-serif;
+            background: linear-gradient(135deg, #FF0000, #FFFFFF); /* Red to White gradient */
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            width: 100%;
+            background: #FF0000; /* Red header */
+            color: #FFFFFF;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 5px #000;
+            border-bottom: 5px solid #FFFFFF; /* White bottom border */
+        }
+
+        .jersey-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay behind jersey */
+            border: 5px solid #FFF; /* White border around jersey */
+            box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .jersey-img {
+            height: 250px;
+            margin: 0 15px;
+            border-radius: 10px;
+        }
+
+        .team-record {
+            margin: 20px;
+            font-size: 1.5em;
+            color: #FFD700; /* Gold color for record */
+            text-align: center;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .roster-table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.8); /* Dark background for table */
+            color: #FFF;
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .roster-table th, .roster-table td {
+            border: 2px solid #FFF; /* White borders */
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .roster-table th {
+            background: #FF0000; /* Red header */
+            color: #FFF;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .roster-table tr:hover {
+            background: rgba(255, 255, 255, 0.1); /* Light hover effect */
+        }
+
+        .star {
+            font-size: 1.5em;
+            color: #FFD700; /* Gold color for stars */
+            margin: 0 5px;
+        }
+
+        .back-button {
+            margin: 30px;
+            padding: 15px 30px;
+            background: #FFF;
+            color: #FF0000; /* Red text */
+            text-decoration: none;
+            font-size: 1.2em;
+            border: 2px solid #FF0000; /* Red border */
+            transition: 0.3s;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button:hover {
+            background: #FF0000; /* Red hover */
+            color: #FFF;
+            border-color: #FFF;
+        }
+
+        .star-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Team Header -->
+    <div class="header">
+        Diddy's Disciples
+    </div>
+
+    <!-- Star Decoration -->
+    <div class="star-container">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+    </div>
+
+    <!-- Team Jersey Display -->
+    <div class="jersey-container">
+        <img src="DiddysDisciples.png" alt="Diddy's Disciples Jersey" class="jersey-img">
+    </div>
+
+    <!-- Team Record -->
+    <div class="team-record">
+        Team Record: 0-1
+    </div>
+
+    <!-- Player Roster Table -->
+    <table class="roster-table">
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>PPG</th>
+            <th>RPG</th>
+            <th>APG</th>
+            <th>SPG</th>
+            <th>BPG</th>
+            <th>3PM PG</th>
+        </tr>
+        <tr>
+            <td>Ibby Ilyas</td>
+            <td>G</td>
+            <td>4</td>
+            <td>8</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Evan Lipkus</td>
+            <td>G</td>
+            <td>0</td>
+            <td>4</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Zack Brotman</td>
+            <td>F</td>
+            <td>13</td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Neye Awani</td>
+            <td>F</td>
+            <td>26</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Avi Kirshblum</td>
+            <td>C</td>
+            <td>0</td>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Amit Wisniewski</td>
+            <td>C</td>
+            <td>0</td>
+            <td>5</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+    <!-- Star Decoration -->
+    <div class="star-container">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+    </div>
+
+    <!-- Back Button -->
+    <a href="rosters.html" class="back-button">Back to Rosters</a>
+</body>
+</html>
