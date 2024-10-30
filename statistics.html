@@ -11,7 +11,7 @@
             font-family: 'Anton', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a; /* Dark background for a better aesthetic */
+            background-color: #1a1a1a; /* Dark background */
         }
         header {
             background: #4B0082; /* Deep purple background */
@@ -86,11 +86,24 @@
             margin: 0;
         }
         .team-list li {
+            display: flex;
+            align-items: center;
             background-color: #444;
             margin: 5px 0;
             padding: 10px;
             border-radius: 5px;
             font-size: 1.2em;
+        }
+        .team-list li img {
+            width: 20px; /* Adjust size of arrow */
+            height: auto;
+            margin-right: 8px;
+        }
+        .team-list li.green-arrow {
+            color: #00FF00; /* Green color for wins */
+        }
+        .team-list li.red-arrow {
+            color: #FF0000; /* Red color for losses */
         }
     </style>
 </head>
@@ -104,8 +117,8 @@
                 <li><a href="rosters.html">Rosters</a></li>
                 <li><a href="schedule.html">Schedule</a></li>
                 <li><a href="statistics.html">Standings</a></li>
-                <li><a href="players.html">League Leaders</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="reschedule.html">Contact</a></li>
                 <li><a href="notifications.html">Notifications</a></li>
             </ul>
         </nav>
@@ -120,12 +133,24 @@
             <div class="conference-box">
                 <h2>Eastern Conference</h2>
                 <ul class="team-list">
-                    <li>1. HABS - Wins: 1, Losses: 0</li>
-                    <li>2. Lobsters - Wins: 1, Losses: 0</li>
-                    <li>3. Zeta - Wins: 1, Losses: 0</li>
-                    <li>4. Finders of Waldo - Wins: 0, Losses: 0</li>
-                    <li>5. Sigs - Wins: 0, Losses: 0</li>
-                    <li>6. ZBT - Wins: 0, Losses: 1</li>
+                    <li class="green-arrow">
+                        <img src="green_arrow.png" alt="Win"> KGB - Wins: 1, Losses: 0
+                    </li>
+                    <li class="red-arrow">
+                        <img src="red_arrow.png" alt="Loss"> Shooting Blanks - Wins: 0, Losses: 1
+                    </li>
+                    <li class="green-arrow">
+                        <img src="green_arrow.png" alt="Win"> Zeta - Wins: 1, Losses: 0
+                    </li>
+                    <li class="red-arrow">
+                        <img src="red_arrow.png" alt="Loss"> ZBT - Wins: 0, Losses: 1
+                    </li>
+                    <li class="green-arrow">
+                        <img src="green_arrow.png" alt="Win"> Laskin Robbins - Wins: 1, Losses: 0
+                    </li>
+                    <li class="red-arrow">
+                        <img src="red_arrow.png" alt="Loss"> Diddy's Disciples - Wins: 0, Losses: 1
+                    </li>
                 </ul>
             </div>
 
@@ -133,12 +158,24 @@
             <div class="conference-box">
                 <h2>Western Conference</h2>
                 <ul class="team-list">
-                    <li>1. KGB - Wins: 1, Losses: 0</li>
-                    <li>2. Laskin Robbins - Wins: 1, Losses: 0</li>
-                    <li>3. Shooters - Wins: 0, Losses: 1</li>
-                    <li>4. Feinstein's Debt - Wins: 0, Losses: 1</li>
-                    <li>5. Diddy's Disciples - Wins: 0, Losses: 1</li>
-                    <li>6. Shooting Blanks - Wins: 0, Losses: 1</li>
+                    <li class="red-arrow">
+                        <img src="red_arrow.png" alt="Loss"> Feinstein's Debt - Wins: 0, Losses: 1
+                    </li>
+                    <li class="green-arrow">
+                        <img src="green_arrow.png" alt="Win"> HABS - Wins: 1, Losses: 0
+                    </li>
+                    <li class="green-arrow">
+                        <img src="green_arrow.png" alt="Win"> Shooters - Wins: 0, Losses: 1
+                    </li>
+                    <li class="red-arrow">
+                        <img src="red_arrow.png" alt="Loss"> Lobsters - Wins: 1, Losses: 0
+                    </li>
+                    <li>
+                        Finders of Waldo - Wins: 0, Losses: 0
+                    </li>
+                    <li>
+                        Sigs - Wins: 0, Losses: 0
+                    </li>
                 </ul>
             </div>
         </div>
