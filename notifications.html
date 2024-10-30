@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LBL News</title>
+    <!-- Google Fonts for Anton -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+    <style>
+        body {
+            font-family: 'Anton', sans-serif;
+            background-color: #1E1E1E;
+            color: #FFF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background: #4B0082;
+            padding: 10px 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+            color: white;
+        }
+
+        .news-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .news-item {
+            display: flex;
+            align-items: center;
+            background: #FFF;
+            color: #333;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .news-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .news-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-title {
+            font-size: 1.5em;
+            color: #4B0082;
+            margin: 0;
+        }
+
+        .news-description {
+            font-size: 1em;
+            color: #333;
+            margin: 5px 0;
+        }
+
+        .news-date {
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        .sponsor {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .sponsor img {
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <header>LBL News</header>
+
+    <div class="news-container" id="news-container">
+        <!-- News items will be added dynamically here -->
+    </div>
+
+    <div class="sponsor">
+        <p>Sponsored by</p>
+        <img src="hottakes.png" alt="Hottakes Sponsor Logo">
+    </div>
+
+    <script>
+        // News data array
+        const newsData = [
+            {
+                title: "Game Rescheduled: Habs vs Shooters",
+                description: "The game originally scheduled for October 28 has been moved to November 3 due to venue availability.",
+                date: "October 29, 2024",
+                image: "game_rescheduled.jpg"
+            },
+            {
+                title: "New LBL Merchandise Available!",
+                description: "Check out our new line of merch including jerseys and caps!",
+                date: "October 25, 2024",
+                image: "merch.jpg"
+            },
+            {
+                title: "Welcome New Athletes!",
+                description: "A warm welcome to our latest sign-ups. Let’s make this season unforgettable!",
+                date: "October 20, 2024",
+                image: "welcome.jpg"
+            }
+        ];
+
+        // Function to add news items to the container
+        function loadNews() {
+            const newsContainer = document.getElementById("news-container");
+            newsData.forEach(item => {
+                const newsItem = document.createElement("div");
+                newsItem.classList.add("news-item");
+
+                newsItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}">
+                    <div class="news-content">
+                        <h3 class="news-title">${item.title}</h3>
+                        <p class="news-description">${item.description}</p>
+                        <span class="news-date">${item.date}</span>
+                    </div>
+                `;
+
+                newsContainer.appendChild(newsItem);
+            });
+        }
+
+        // Load news items on page load
+        window.onload = loadNews;
+    </script>
+</body>
+</html>
