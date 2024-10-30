@@ -13,20 +13,49 @@
             color: #FFF;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
+        /* Header styling */
         header {
             background: #4B0082;
             padding: 10px 20px;
+            display: flex;
+            align-items: center;
             width: 100%;
-            text-align: center;
-            font-size: 2em;
-            color: white;
         }
 
+        .header-logo {
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 auto;
+            text-align: center;
+            flex: 1;
+            background-color: #4B0082;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        /* News Page Content */
         .news-container {
             width: 80%;
             max-width: 800px;
@@ -87,17 +116,33 @@
     </style>
 </head>
 <body>
-    <header>LBL News</header>
+    <!-- Header with Navigation Links -->
+    <header>
+        <img src="Screen Shot 2024-10-19 at 2.05.09 AM.png" alt="LBL Logo" class="header-logo">
+        <nav>
+            <ul>
+                <li><a href="funruns.html">Home</a></li>
+                <li><a href="rosters.html">Rosters</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="statistics.html">Standings</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="notifications.html" class="active">Notifications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- News Section -->
     <div class="news-container" id="news-container">
         <!-- News items will be added dynamically here -->
     </div>
 
     <div class="sponsor">
         <p>Sponsored by</p>
-        <img src="sponsor.jpeg" alt="Hottakes Sponsor Logo">
+        <img src="hottakes.png" alt="Hottakes Sponsor Logo">
     </div>
 
+    <!-- Script to dynamically load news items -->
     <script>
         // News data array
         const newsData = [
