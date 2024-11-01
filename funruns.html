@@ -6,6 +6,7 @@
     <title>LBL - Home</title>
     <!-- Link to Google Fonts for Anton -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Anton', sans-serif;
@@ -25,15 +26,13 @@
             height: 80px;
             margin-right: 20px;
         }
-        nav {
-            flex-grow: 1;
-        }
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
         nav ul li {
             display: inline;
@@ -49,7 +48,6 @@
         nav ul li a:hover {
             color: #FFD700;
         }
-
         .slideshow-container {
             position: relative;
             max-width: 100%;
@@ -66,6 +64,7 @@
             background-position: center;
             opacity: 0;
             transition: opacity 0.8s ease-in-out;
+            will-change: opacity;
         }
         .slide.active {
             opacity: 1;
@@ -121,19 +120,15 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            body {
-                transform: scale(0.9);
-                transform-origin: top left;
-                width: 111.11%;
+            nav ul {
+                flex-direction: column;
+                align-items: center;
             }
-            header {
-                padding: 5px 10px;
+            nav ul li {
+                margin: 10px 0;
             }
             .header-logo {
                 height: 60px;
-            }
-            nav ul li a {
-                font-size: 1em;
             }
             .overlay-text {
                 font-size: 2.5em;
