@@ -59,7 +59,7 @@
             flex-direction: column;
             align-items: center;
             margin-top: 30px;
-            background-color: #000;
+            background-color: #2E2E2E; /* Changed to gray color */
             padding: 20px;
         }
 
@@ -111,11 +111,16 @@
             color: #fff;
         }
 
-        /* Mobile-specific zoom for the black section */
+        /* Mobile-specific adjustments */
         @media only screen and (max-width: 768px) {
             .roster-container {
                 transform: scale(0.7);
                 transform-origin: top left;
+            }
+
+            .center-content {
+                align-items: flex-start; /* Move to the right */
+                padding-left: 15px;
             }
 
             .header-logo {
