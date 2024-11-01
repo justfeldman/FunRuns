@@ -21,6 +21,7 @@
             padding: 10px 20px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
         }
 
         .header-logo {
@@ -28,18 +29,21 @@
             margin-right: 20px;
         }
 
+        nav {
+            flex: 1;
+        }
+
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            text-align: center;
-            flex: 1;
-            background-color: #4B0082;
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
         }
 
         nav ul li {
             display: inline;
-            margin: 0 15px;
         }
 
         nav ul li a {
@@ -108,6 +112,44 @@
             font-size: 22px;
             color: #fff;
         }
+
+        @media (max-width: 896px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+                gap: 10px;
+                width: 100%;
+            }
+
+            .header-logo {
+                margin-bottom: 10px;
+            }
+
+            .grid-wrapper {
+                gap: 10px;
+            }
+
+            .grid-row {
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+                gap: 15px;
+            }
+
+            .jersey {
+                width: 90px;
+            }
+
+            /* Hide jerseys without links */
+            .grid-row img:not(.jersey-link img) {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -121,7 +163,6 @@
                 <li><a href="schedule.html">Schedule</a></li>
                 <li><a href="statistics.html">Standings</a></li>
                 <li><a href="players.html">League Leaders</a></li>
-                <li><a href="contact.html">Contact</a></li>
                 <li><a href="notifications.html">Notifications</a></li>
             </ul>
         </nav>
@@ -133,16 +174,14 @@
         <div class="grid-wrapper">
             <!-- Jerseys Above the Logo -->
             <div class="grid-row">
-                <img src="Barcelone.png" alt="Barcelona Jersey" class="jersey">
-                <img src="Pacers.png" alt="Pacers Jersey" class="jersey">
                 <a href="KentuckyGrizzlyBalls.html" class="jersey-link">
                     <img src="Kentucky.png" alt="Kentucky Grizzly Ballz Jersey" class="jersey">
                 </a>
                 <a href="shootingblanks.html" class="jersey-link">
                     <img src="Kings.png" alt="Shooting Blanks Jersey" class="jersey">
                 </a>
-                <a href="lobsters.html" class="jersey">
-                <img src="Orange.png" alt="Orange Jersey" class="jersey">
+                <a href="lobsters.html" class="jersey-link">
+                    <img src="Orange.png" alt="Orange Jersey" class="jersey">
                 </a>
             </div>
 
@@ -154,8 +193,6 @@
                 <a href="suns.html" class="jersey-link">
                     <img src="Suns.png" alt="Suns Jersey" class="jersey">
                 </a>
-                <img src="Celtics.png" alt="Celtics Jersey" class="jersey">
-                <img src="JackieMoon.png" alt="Jackie Moon Jersey" class="jersey">
                 <a href="schriedershooters.html" class="jersey-link">
                     <img src="RedeemTeam.png" alt="Redeem Team Jersey" class="jersey">
                 </a>
@@ -170,29 +207,25 @@
             <!-- Jerseys Below the Logo -->
             <div class="grid-row">
                 <a href="allstars.html" class="jersey-link">
-                <img src="OtherAllStars.png" alt="Other All Stars Jersey" class="jersey">
+                    <img src="OtherAllStars.png" alt="Other All Stars Jersey" class="jersey">
                 </a>
-            <a href="laskin.html" class ="jersey-link">
-                <img src="Idek.png" alt="IDK Jersey" class="jersey">
-            </a>
-                <img src="All Stars.png" alt="All Stars Jersey" class="jersey">
-                <img src="Hawks.png" alt="Hawks Jersey" class="jersey">
-                <img src="Nets.png" alt="Nets Jersey" class="jersey">
+                <a href="laskin.html" class="jersey-link">
+                    <img src="Idek.png" alt="IDK Jersey" class="jersey">
+                </a>
+                <a href="oregon.html" class="jersey-link">
+                    <img src="Oregon.png" alt="Oregon Jersey" class="jersey">
+                </a>
             </div>
 
             <!-- Last Row of Jerseys -->
             <div class="grid-row">
-                <a href="oregon.html" class="jersey-link">
-                <img src="Oregon.png" alt="Oregon Jersey" class="jersey">
-                </a>
-                <img src="Vice.png" alt="Vice Jersey" class="jersey">
-                <a href= "habs.html" class="jersey-link">
-                <img src="Pelicans.png" alt="Pelicans Jersey" class="jersey">
+                <a href="habs.html" class="jersey-link">
+                    <img src="Pelicans.png" alt="Pelicans Jersey" class="jersey">
                 </a>
                 <a href="zeta.html" class="jersey-link">
                     <img src="Raptors.png" alt="Raptors Jersey" class="jersey">
                 </a>
-                <img src="Wolves.png" alt="Wolves Jersey" class="jersey">
+                <img src="Vice.png" alt="Vice Jersey" class="jersey jersey-link">
             </div>
         </div>
     </div>
