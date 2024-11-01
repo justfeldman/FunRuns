@@ -3,40 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LBL - Home</title>
-    <!-- Link to Google Fonts for Anton -->
+    <title>LBL News</title>
+    <!-- Google Fonts for Anton -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Anton', sans-serif;
-            background: #1E1E1E;
+            background-color: #1E1E1E;
+            color: #FFF;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
         }
+
+        /* Header styling */
         header {
             background: #4B0082;
             padding: 10px 20px;
             display: flex;
             align-items: center;
+            width: 100%;
         }
+
         .header-logo {
             height: 80px;
             margin-right: 20px;
         }
+
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 0;
+            margin: 0 auto;
             text-align: center;
             flex: 1;
             background-color: #4B0082;
         }
+
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
@@ -44,101 +50,73 @@
             font-size: 1.2em;
             transition: color 0.3s;
         }
+
         nav ul li a:hover {
             color: #FFD700;
         }
 
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            height: 60vh;
-            margin: auto;
-            overflow: hidden;
-            border: 5px solid #000;
-        }
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-            will-change: opacity;
-        }
-        .slide.active {
-            opacity: 1;
-            z-index: 1;
-        }
-        .slide:nth-child(5), .slide:nth-child(6) {
-            background-position: center 10%;
-        }
-        .slide:nth-child(2), .slide:nth-child(4) {
-            background-position: center 75%;
-        }
-        .slide:nth-child(1), .slide:nth-child(3) {
-            background-position: center 60%;
-        }
-        .black-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
-        .overlay-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            text-align: center;
-        }
-        .overlay-text {
-            font-family: 'Anton', sans-serif;
-            color: rgba(255, 255, 255, 0.9); /* Slight transparency */
-            font-size: 4em;
-            font-weight: bold;
-            line-height: 1.2;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-        }
-        .sponsor-section {
-            background-color: #000;
-            color: white;
+        /* News Page Content */
+        .news-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 30px auto;
             padding: 20px;
-            text-align: center;
-        }
-        .sponsor-title {
-            font-family: 'Anton', sans-serif;
-            font-size: 2em;
-            color: white;
-            margin: 10px 0;
-        }
-        .sponsor-logo {
-            height: 80px;
-            margin-top: 10px;
         }
 
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .overlay-text {
-                font-size: 2.5em;
-            }
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-            nav ul {
-                display: flex;
-                flex-direction: column;
-            }
+        .news-item {
+            display: flex;
+            align-items: center;
+            background: #FFF;
+            color: #333;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .news-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .news-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-title {
+            font-size: 1.5em;
+            color: #4B0082;
+            margin: 0;
+        }
+
+        .news-description {
+            font-size: 1em;
+            color: #333;
+            margin: 5px 0;
+        }
+
+        .news-date {
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        .sponsor {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .sponsor img {
+            width: 120px;
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header with Navigation Links -->
     <header>
         <img src="Screen Shot 2024-10-19 at 2.05.09 AM.png" alt="LBL Logo" class="header-logo">
         <nav>
@@ -148,65 +126,69 @@
                 <li><a href="schedule.html">Schedule</a></li>
                 <li><a href="statistics.html">Standings</a></li>
                 <li><a href="players.html">League Leaders</a></li>
-                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="notifications.html" class="active">Notifications</a></li>
+                
             </ul>
         </nav>
     </header>
 
-    <!-- Slideshow Container -->
-    <div class="slideshow-container">
-        <!-- Slideshow images -->
-        <div class="slide active" style="background-image: url('Screen Shot 2024-10-28 at 2.45.03 PM.png');"></div>
-        <div class="slide" style="background-image: url('Screen Shot 2024-10-28 at 2.53.44 PM.png');"></div>
-        <div class="slide" style="background-image: url('Screen Shot 2024-10-28 at 3.11.17 PM.png');"></div>
-        <div class="slide" style="background-image: url('Screen Shot 2024-10-28 at 2.58.14 PM.png');"></div>
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010551.png');"></div>
-        <div class="slide" style="background-image: url('Screenshot 2024-10-19 010539.png');"></div>
-
-        <!-- Light black overlay -->
-        <div class="black-overlay"></div>
-
-        <!-- Overlay text -->
-        <div class="overlay-content">
-            <div class="overlay-text">The London Basketball League</div>
-        </div>
+    <!-- News Section -->
+    <div class="news-container" id="news-container">
+        <!-- News items will be added dynamically here -->
     </div>
 
-    <!-- Sponsor Section -->
-    <div class="sponsor-section">
-        <div class="sponsor-title">Officially Sponsored By:</div>
-        <a href="https://hottakesapp.com/" target="_blank">
-            <img src="Sponsor.jpeg" alt="Hot Takes Sponsor" class="sponsor-logo">
-        </a>
+    <div class="sponsor">
+        <p>Sponsored by</p>
+        <img src="Sponsor.jpeg" alt="Hottakes Sponsor Logo">
     </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 London Basketball League. All rights reserved.</p>
-    </footer>
-
-    <!-- JavaScript for Slideshow -->
+    <!-- Script to dynamically load news items -->
     <script>
-        const slides = document.getElementsByClassName('slide');
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove('active');
+        // News data array
+        const newsData = [
+            {
+                title: "Game Rescheduled: Habs vs Shooters",
+                description: "The game originally scheduled for October 28 has been moved to November 3 due to venue availability.",
+                date: "October 29, 2024",
+                image: "game_rescheduled.jpg"
+            },
+            {
+                title: "New LBL Merchandise Available!",
+                description: "Check out our new line of merch including jerseys and caps!",
+                date: "October 25, 2024",
+                image: "merch.jpg"
+            },
+            {
+                title: "Welcome New Athletes!",
+                description: "A warm welcome to our latest sign-ups. Let’s make this season unforgettable!",
+                date: "October 20, 2024",
+                image: "welcome.jpg"
             }
-            slides[index].classList.add('active');
+        ];
+
+        // Function to add news items to the container
+        function loadNews() {
+            const newsContainer = document.getElementById("news-container");
+            newsData.forEach(item => {
+                const newsItem = document.createElement("div");
+                newsItem.classList.add("news-item");
+
+                newsItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}">
+                    <div class="news-content">
+                        <h3 class="news-title">${item.title}</h3>
+                        <p class="news-description">${item.description}</p>
+                        <span class="news-date">${item.date}</span>
+                    </div>
+                `;
+
+                newsContainer.appendChild(newsItem);
+            });
         }
 
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
-        }
-
-        // Initial display
-        showSlide(currentIndex);
-
-        // Change slides every 3 seconds
-        setInterval(nextSlide, 3000);
+        // Load news items on page load
+        window.onload = loadNews;
     </script>
 </body>
 </html>
